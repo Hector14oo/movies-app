@@ -14,6 +14,13 @@ const routes: Record<string, string> = {
   '/account': 'Account',
 };
 
+const excludeRoutes: string[] = [
+  '/account/login',
+  '/account/register',
+  '/account/forgot-password',
+  '/account/setting-password',
+];
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const path = usePathname();
@@ -33,11 +40,15 @@ export function Header() {
           handler={back}
           type='BACK'
         />
-        <span>{title}</span>
-        <Button
-          handler={handleMenu}
-          type='MENU'
-        />
+        {!excludeRoutes.includes(path) && (
+          <>
+            <span>{title}</span>
+            <Button
+              handler={handleMenu}
+              type='MENU'
+            />
+          </>
+        )}
       </nav>
       {isOpen && <FloatingMenu handler={handleMenu} />}
     </header>
