@@ -1,0 +1,27 @@
+.Login {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.Login form {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Login form a,
+.Login span {
+  font-size: var(--SMALLY);
+}
+.Login form a {
+  width: 100%;
+  color: var(--C2);
+}
+.Login form > a {
+  text-align: right;
+}
+.Login form span {
+  width: 100%;
+  text-align: center;
+}
