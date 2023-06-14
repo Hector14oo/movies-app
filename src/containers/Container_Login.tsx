@@ -13,7 +13,8 @@ export function Container_Login() {
     setBlind(!blind);
   };
 
-  const handleClick = () => {
+  const handleClick = (e: Event) => {
+    e.preventDefault();
     alert('Login');
   };
   return (
@@ -23,6 +24,7 @@ export function Container_Login() {
         height={250}
       />
       <form action=''>
+        <h1>Login</h1>
         <Input
           type='EMAIL'
           placeholder='Email'

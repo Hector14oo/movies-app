@@ -1,58 +1,49 @@
 'use client';
+
 import { useState } from 'react';
 import { Button, Input } from '@components';
-import { Register } from 'assets/figures';
-import Link from 'next/link';
+import { SettingPassword } from 'assets/figures';
+import { useRouter } from 'next/navigation';
 
-import styles from '@styles/containers/Register.module.css';
+import styles from '@styles/containers/SettingPasswor.module.css';
 
-export function Container_Register() {
+export function Container_SettingPasswor() {
   const [blind, setBlind] = useState(false);
+  const { push } = useRouter();
 
   const handleBlind = () => {
     setBlind(!blind);
   };
   const handleClick = (e: Event) => {
     e.preventDefault();
-    alert('Register');
+    alert('Password Set');
+    push('/');
   };
-
   return (
-    <main className={styles.Register}>
-      <Register
-        width={200}
+    <main className={styles.SettingPasswor}>
+      <SettingPassword
+        width={250}
         height={250}
       />
       <form action=''>
-        <h1>Register</h1>
+        <h1>Set New Password</h1>
         <Input
-          type='EMAIL'
-          placeholder='Email'
-        />
-        <Input
-          type='EMAIL'
-          placeholder='Confirm Email'
+          blindState={blind}
+          blindHandler={handleBlind}
+          type='PASSWORD'
+          placeholder='New Password'
         />
         <Input
           blindState={blind}
           blindHandler={handleBlind}
           type='PASSWORD'
-          placeholder='Password'
-        />
-        <Input
-          blindState={blind}
-          blindHandler={handleBlind}
-          type='PASSWORD'
-          placeholder='Confirm Password'
+          placeholder='Confirm New Password'
         />
         <Button
           type='NORMAL'
-          text='Register'
+          text='Submit'
           handler={handleClick}
         />
-        <span>
-          Already have account? <Link href={'/account/login'}>Login</Link>
-        </span>
       </form>
     </main>
   );

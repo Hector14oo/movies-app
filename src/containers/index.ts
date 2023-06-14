@@ -5,3 +5,5 @@ export { Container_Favorites } from './Container_Favorites';
 export { Container_Account } from './Container_Account';
 export { Container_Login } from './Container_Login';
 export { Container_Register } from './Container_Register';
+export { Container_ForgotPassword } from './Container_ForgotPassword';
+export { Container_SettingPasswor } from './Container_SettingPassword';

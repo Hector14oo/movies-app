@@ -13,7 +13,13 @@ export function Input({
   handler?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   type?: 'SEARCH' | 'EMAIL' | 'PASSWORD';
-  placeholder?: 'Email' | 'Confirm Email' | 'Password' | 'Confirm Password';
+  placeholder?:
+    | 'Email'
+    | 'Confirm Email'
+    | 'Password'
+    | 'Confirm Password'
+    | 'New Password'
+    | 'Confirm New Password';
   blindState?: boolean;
   blindHandler?: () => void;
 }) {
