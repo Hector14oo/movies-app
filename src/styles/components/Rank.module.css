@@ -1,0 +1,9 @@
+.Span {
+  display: grid;
+  place-items: center;
+  padding: 2.5px 5px;
+
+  font-weight: 700;
+  font-size: var(--SMALLY);
+  border-radius: var(--BR-1);
+}

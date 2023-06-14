@@ -1,0 +1,20 @@
+.Logo {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--C1);
+  font-size: var(--MIDDLE);
+  font-weight: 700;
+
+  background-color: var(--C2);
+  border-radius: var(--BR-1);
+  box-shadow: var(--SHADOW);
+}
+.Logo > svg{
+  width: 28px;
+  height: 28px;
+}

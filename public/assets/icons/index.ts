@@ -1,0 +1,13 @@
+export { AboutUs } from './AboutUs';
+export { ArrowLeft } from './ArrowLeft';
+export { Cake } from './Cake';
+export { Glass } from './Glass';
+export { HeartFill } from './HeartFill';
+export { HeartOutLine } from './HeartOutLine';
+export { Home } from './Home';
+export { Location } from './Location';
+export { PopCorn } from './PopCorn';
+export { Menu } from './Menu';
+export { Play } from './Play';
+export { Star } from './Star';
+export { X } from './X';

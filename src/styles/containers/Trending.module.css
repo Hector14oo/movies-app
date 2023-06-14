@@ -1,0 +1,91 @@
+@keyframes Appear {
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Trending {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: Appear 0.75s var(--TRANSITION-2) forwards;
+}
+.Trending .Buttons {
+  width: 100%;
+  height: fit-content;
+  margin: auto 0;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.Trending .Buttons button svg {
+  transition: all 0.5s var(--TRANSITION-2);
+}
+.Trending .Buttons button {
+  transition: all 0.5s var(--TRANSITION-2);
+}
+.Trending .Buttons button:first-child {
+  transform: scale(1.75, 2) rotateY(180deg);
+}
+.Trending .Buttons button:first-child[disabled] {
+  transform: scale(1.5, 1.75) rotateY(180deg);
+  filter: grayscale(80%);
+}
+.Trending .Buttons button:first-child[disabled] svg {
+  transform: translateX(-20%);
+}
+.Trending .Buttons button:last-child {
+  transform: scale(1.75, 2);
+}
+.Trending .Buttons button:last-child[disabled] {
+  transform: scale(1.5, 1.75);
+  filter: grayscale(80%);
+}
+.Trending .Buttons button:last-child[disabled] svg {
+  transform: translateX(-20%);
+}
+.Trending .Slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.Trending .Slider article {
+  width: 300px;
+  height: 525px;
+  position: absolute;
+  margin: auto 0;
+  top: 0;
+  bottom: 0;
+
+  transition: all 0.75s var(--TRANSITION-2);
+  transform: translateX(calc(-627.5px + (var(--id) * 327px)));
+}
+.Trending .Slider article header {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 1s var(--TRANSITION-1);
+}
+.Trending .Slider article footer h2,
+.Trending .Slider article footer p {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s var(--TRANSITION-1);
+}
+.Trending .Slider article:nth-child(3) {
+  filter: blur(0);
+  height: 100%;
+}
+.Trending .Slider article:nth-child(3) header,
+.Trending .Slider article:nth-child(3) footer h2,
+.Trending .Slider article:nth-child(3) footer p {
+  opacity: 1;
+  transform: translateY(0);
+}

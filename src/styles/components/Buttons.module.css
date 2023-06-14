@@ -1,0 +1,34 @@
+.Button {
+  width: 100%;
+  height: 40px;
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
+  font-size: var(--SMALL);
+  color: var(--C1);
+
+  border-radius: 100px;
+  background-color: var(--C2);
+  box-shadow: var(--SHADOW);
+  text-decoration: none;
+}
+.MenuButton {
+  width: 46px;
+  height: 46px;
+  padding: 8px;
+
+  border-radius: var(--BR-3);
+}
+.SpecialButton {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+
+  border-radius: var(--BR-2);
+  background-color: var(--C2-B);
+}
+.SpecialButton > svg {
+  fill: var(--C2);
+  pointer-events: none;
+}
