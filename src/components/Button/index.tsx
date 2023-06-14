@@ -46,6 +46,7 @@ export function Button({ isFav, handler, href = '#', text, type }: Buttons) {
         <button
           className={`${styles.Button}`}
           onClick={handler}
+          style={text === 'Log Out' ? { backgroundColor: 'var(--BAD)' } : {}}
         >
           {text}
         </button>
