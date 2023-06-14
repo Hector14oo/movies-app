@@ -8,12 +8,10 @@ export function Input({
   handler,
   value,
   type,
-  placeholder,
 }: {
   handler?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   type?: 'SEARCH' | 'EMAIL' | 'PASSWORD';
-  placeholder?: 'Email' | 'Confirm Email' | 'Password' | 'Confirm Password';
 }) {
   const [blind, setBlind] = useState(false);
 
@@ -31,7 +29,7 @@ export function Input({
           <input
             type='email'
             id='email'
-            placeholder={placeholder}
+            placeholder='Email'
           />
         </label>
       );
@@ -51,17 +49,10 @@ export function Input({
           <input
             type={blind ? 'text' : 'password'}
             id='password'
-            placeholder={placeholder}
+            placeholder='Password'
           />
           <i onClick={() => setBlind(!blind)}>
-            {blind ? (
-              <BlindEye
-                width={18}
-                height={18}
-              />
-            ) : (
-              <Eye />
-            )}
+            {blind ? <BlindEye width={18} height={18} /> : <Eye />}
           </i>
         </label>
       );
