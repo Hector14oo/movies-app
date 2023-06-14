@@ -1,6 +1,4 @@
-'use client';
-
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { Glass, At, PadLock, Eye, BlindEye } from 'assets/icons';
 import styles from '@styles/components/Inputs.module.css';
 
@@ -9,19 +7,21 @@ export function Input({
   value,
   type,
   placeholder,
+  blindState,
+  blindHandler,
 }: {
   handler?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   type?: 'SEARCH' | 'EMAIL' | 'PASSWORD';
   placeholder?: 'Email' | 'Confirm Email' | 'Password' | 'Confirm Password';
+  blindState?: boolean;
+  blindHandler?: () => void;
 }) {
-  const [blind, setBlind] = useState(false);
-
   switch (type) {
     case 'EMAIL':
       return (
         <label
-          htmlFor='email'
+          htmlFor={placeholder}
           className={styles.FormInput}
         >
           <At
@@ -30,7 +30,7 @@ export function Input({
           />
           <input
             type='email'
-            id='email'
+            id={placeholder}
             placeholder={placeholder}
           />
         </label>
@@ -39,7 +39,7 @@ export function Input({
     case 'PASSWORD':
       return (
         <label
-          htmlFor='password'
+          htmlFor={placeholder}
           className={styles.FormInput}
         >
           <i>
@@ -49,12 +49,12 @@ export function Input({
             />
           </i>
           <input
-            type={blind ? 'text' : 'password'}
-            id='password'
+            type={blindState ? 'text' : 'password'}
+            id={placeholder}
             placeholder={placeholder}
           />
-          <i onClick={() => setBlind(!blind)}>
-            {blind ? (
+          <i onClick={blindHandler}>
+            {blindState ? (
               <BlindEye
                 width={18}
                 height={18}

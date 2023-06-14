@@ -1,24 +1,24 @@
 'use client';
 import { useState } from 'react';
 import { Button, Input } from '@components';
-import { Login } from 'assets/figures';
+import { Register } from 'assets/figures';
 import Link from 'next/link';
 
-import styles from '@styles/containers/Login.module.css';
+import styles from '@styles/containers/Register.module.css';
 
-export function Container_Login() {
+export function Container_Register() {
   const [blind, setBlind] = useState(false);
 
   const handleBlind = () => {
     setBlind(!blind);
   };
-
   const handleClick = () => {
-    alert('Login');
+    alert('Register');
   };
+
   return (
-    <main className={styles.Login}>
-      <Login
+    <main className={styles.Register}>
+      <Register
         width={200}
         height={250}
       />
@@ -28,19 +28,28 @@ export function Container_Login() {
           placeholder='Email'
         />
         <Input
+          type='EMAIL'
+          placeholder='Confirm Email'
+        />
+        <Input
           blindState={blind}
           blindHandler={handleBlind}
           type='PASSWORD'
           placeholder='Password'
         />
-        <Link href={'/account/forgot-password'}>Forgot Password?</Link>
+        <Input
+          blindState={blind}
+          blindHandler={handleBlind}
+          type='PASSWORD'
+          placeholder='Confirm Password'
+        />
         <Button
           type='NORMAL'
-          text='Login'
+          text='Register'
           handler={handleClick}
         />
         <span>
-          New here? <Link href={'/account/register'}>Register</Link>
+          Already have account? <Link href={'/account/Login'}>Login</Link>
         </span>
       </form>
     </main>

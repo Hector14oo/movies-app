@@ -4,3 +4,4 @@ export { Container_Trending } from './Container_Trending';
 export { Container_Favorites } from './Container_Favorites';
 export { Container_Account } from './Container_Account';
 export { Container_Login } from './Container_Login';
+export { Container_Register } from './Container_Register';
