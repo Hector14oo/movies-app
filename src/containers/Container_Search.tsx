@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, ChangeEvent } from 'react';
-import { Card, InputSearcher } from '@components';
+import { Card, Input } from '@components';
 import { Search } from 'assets/figures';
 import styles from '@styles/containers/Search.module.css';
 
@@ -23,7 +23,8 @@ export function Container_Search() {
 
   return (
     <main className={styles.Search}>
-      <InputSearcher
+      <Input
+        type='SEARCH'
         handler={handleOnChange}
         value={value}
       />
