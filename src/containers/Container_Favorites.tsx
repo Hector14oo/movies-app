@@ -18,7 +18,7 @@ export function Container_Favorites() {
         />
         <h1>Please login to add your favorite movies to this section</h1>
         <Button
-          href={'/login'}
+          href={'/account/login'}
           type='LINK'
           text='Login'
         />
