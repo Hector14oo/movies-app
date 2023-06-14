@@ -10,6 +10,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.ForgotPassword form h1{
+  width: 100%;
+}
 .Register form span,
 .Register form span a {
   width: 100%;

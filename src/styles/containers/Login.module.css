@@ -10,6 +10,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.ForgotPassword form h1{
+  width: 100%;
+}
 .Login form a,
 .Login span {
   font-size: var(--SMALLY);
