@@ -15,6 +15,7 @@ const routes: Record<string, string> = {
 };
 
 const excludeRoutes: string[] = [
+  '/account',
   '/account/login',
   '/account/register',
   '/account/forgot-password',
@@ -34,7 +35,7 @@ export function Header() {
   return (
     <header className={`${styles.Header} ${className}`}>
       <nav
-        style={path === '/account' ? { backgroundColor: 'transparent' } : {}}
+        style={excludeRoutes.includes(path) ? { backgroundColor: 'transparent' } : {}}
       >
         <Button
           handler={back}
