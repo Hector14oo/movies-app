@@ -5,7 +5,14 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Logo, Button } from '@components';
+import {
+  Logo,
+  Button_Back,
+  Button_Favorite,
+  Button_Menu,
+  Button_Close,
+  Button_Normal,
+} from '@components';
 import { Home, Glass, Star, HeartFill, AboutUs, ArrowLeft } from 'assets/icons';
 
 import styles from '@styles/components/FloatingMenu.module.css';
@@ -23,23 +30,20 @@ const PATHS = [
   { route: '/about', name: 'About Us', icon: <AboutUs {...Sizes} /> },
 ];
 
-export function FloatingMenu({ handler }: { handler: () => void }) {
+export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
   const { loged, setLoged } = useSessionContext();
   const pathName = usePathname();
 
   const handleLink = (route?: string) => {
     if (pathName === route) return;
-    handler();
+    toggleMenu();
   };
 
   return (
     <nav className={styles.FloatingMenu}>
       <header>
         <Logo />
-        <Button
-          handler={handler}
-          type='CLOSE'
-        />
+        <Button_Close onClick={toggleMenu} />
       </header>
 
       <main>
@@ -91,17 +95,15 @@ export function FloatingMenu({ handler }: { handler: () => void }) {
               </main>
             </article>
 
-            <Button
+            <Button_Normal
               text='Log Out'
-              handler={() => setLoged(false)}
-              type='NORMAL'
+              onClick={() => setLoged(false)}
             />
           </>
         ) : (
-          <Button
+          <Button_Normal
             text='Login'
-            handler={() => setLoged(true)}
-            type='NORMAL'
+            onClick={() => setLoged(true)}
           />
         )}
       </footer>
