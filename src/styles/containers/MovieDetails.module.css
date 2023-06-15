@@ -1,0 +1,50 @@
+.MovieDetails {
+  width: 100%;
+  height: 100%;
+  overflow: hidden scroll;
+  gap: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40vh auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.MovieDetails header,
+.MovieDetails main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.MovieDetails main {
+  padding: 20px;
+}
+.MovieDetails main article > span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  font-size: var(--MIDDLELY);
+}
+.MovieDetails main article h1 {
+  font-size: var(--MIDDLE);
+  margin-bottom: 6px;
+}
+.MovieDetails main article p {
+  font-size: calc(var(--SMALLY) + 3px);
+  color: var(--C3-50);
+  margin-bottom: 6px;
+}
+.MovieDetails main article p:nth-child(5) {
+  margin: 20px 0;
+  color: var(--C3);
+  font-size: var(--SMALL);
+  font-weight: 300;
+}
+.MovieDetails main article section {
+  display: flex;
+  gap: 20px;
+}
+.MovieDetails main article section article {
+  height: 200px;
+}

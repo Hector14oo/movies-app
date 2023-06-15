@@ -6,6 +6,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.revistagq.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hips.hearstapps.com',
+      },
     ],
   },
 };

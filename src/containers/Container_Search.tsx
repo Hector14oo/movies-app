@@ -33,6 +33,7 @@ export function Container_Search() {
           <>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
               <Card
+                id={i}
                 key={i}
                 type='POSTER'
               />

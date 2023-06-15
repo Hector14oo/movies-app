@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Play } from 'assets/icons';
 import { Button, Rank } from '@components';
 import styles from '@styles/components/Cards.module.css';
+import Link from 'next/link';
 
 interface CardProps {
   rank?: string;
@@ -11,6 +12,7 @@ interface CardProps {
   date?: string;
   type: 'POSTER' | 'TRAILER';
   newStyles?: object;
+  id?: number;
 }
 
 export function Card({
@@ -19,27 +21,30 @@ export function Card({
   date = 'Apr 05, 2023',
   type,
   newStyles,
+  id,
 }: CardProps) {
   const [fav, setFav] = useState(false);
   if (type === 'POSTER')
     return (
-      <article
-        className={styles.Card}
-        style={newStyles}
-      >
-        <header>
-          <Button
-            isFav={fav}
-            handler={() => setFav(!fav)}
-            type='FAV'
-          />
-          <Rank votes={rank} />
-        </header>
-        <footer>
-          <h2>{title}</h2>
-          <p>{date}</p>
-        </footer>
-      </article>
+      <Link href={`/movie-details/${id}`}>
+        <article
+          className={styles.Card}
+          style={newStyles}
+        >
+          <header>
+            <Button
+              isFav={fav}
+              handler={() => setFav(!fav)}
+              type='FAV'
+            />
+            <Rank votes={rank} />
+          </header>
+          <footer>
+            <h2>{title}</h2>
+            <p>{date}</p>
+          </footer>
+        </article>
+      </Link>
     );
 
   return (
