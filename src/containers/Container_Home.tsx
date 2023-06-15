@@ -6,13 +6,19 @@ export function Container_Home() {
     <main className={styles.Main}>
       <h1>Trending Movies Of The Week</h1>
       <section>
-        <Card type='POSTER' />
-        <Card type='POSTER'/>
+        <Card
+          id={1}
+          type='POSTER'
+        />
+        <Card
+          id={2}
+          type='POSTER'
+        />
       </section>
       <h2>Lastest Trailers</h2>
       <section>
-        <Card type='TRAILER'/>
-        <Card type='TRAILER'/>
+        <Card type='TRAILER' />
+        <Card type='TRAILER' />
       </section>
     </main>
   );

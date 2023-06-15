@@ -40,6 +40,7 @@ export function Container_Favorites() {
     <main className={styles.FavoritesFilled}>
       {array.map((_, i) => (
         <Card
+          id={i}
           key={i}
           type='POSTER'
         />

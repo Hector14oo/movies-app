@@ -50,6 +50,7 @@ export function Container_Trending() {
       >
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => (
           <Card
+            id={i}
             key={'POSTER-' + i}
             type='POSTER'
             newStyles={{ '--id': i }}
