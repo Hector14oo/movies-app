@@ -1,11 +1,13 @@
-import styles from '@styles/components/Buttons.module.css';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft } from 'assets/icons';
+import styles from '@styles/components/Buttons.module.css';
 
-export function Back({ onClick }: { onClick: () => void }) {
+export function Back() {
+  const { back } = useRouter();
   return (
     <button
       className={`${styles.Button} ${styles.SpecialButton}`}
-      onClick={onClick}
+      onClick={back}
     >
       <i>
         <ArrowLeft />

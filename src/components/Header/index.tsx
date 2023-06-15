@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { Button, FloatingMenu } from '@components';
+import { usePathname } from 'next/navigation';
+import {
+  Button_Back,
+  Button_Menu,
+  Button_Favorite,
+  FloatingMenu,
+} from '@components';
 import styles from '@styles/components/Header.module.css';
 
 const routes: Record<string, string> = {
@@ -24,12 +29,12 @@ const excludeRoutes: string[] = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [favorite, setFavorite] = useState(false);
   const path = usePathname();
-  const { back } = useRouter();
 
-  const handleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  const title: string | null = routes[path];
+  const title = routes[path];
   const className = path === '/' ? styles['Hidden'] : '';
 
   return (
@@ -41,25 +46,23 @@ export function Header() {
             : {}
         }
       >
-        <Button
-          handler={back}
-          type='BACK'
-        />
+        <Button_Back />
+
         {!excludeRoutes.includes(path) && (
           <>
             <span>{title}</span>
             {path.includes('/movie-details/') ? (
-              <Button type='FAV' />
-            ) : (
-              <Button
-                handler={handleMenu}
-                type='MENU'
+              <Button_Favorite
+                isFav={favorite}
+                toggleFav={() => setFavorite(!favorite)}
               />
+            ) : (
+              <Button_Menu onClick={toggleMenu} />
             )}
           </>
         )}
       </nav>
-      {isOpen && <FloatingMenu handler={handleMenu} />}
+      {isOpen && <FloatingMenu toggleMenu={toggleMenu} />}
     </header>
   );
 }
