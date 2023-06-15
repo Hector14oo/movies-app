@@ -7,9 +7,6 @@ import Image from 'next/image';
 
 import {
   Logo,
-  Button_Back,
-  Button_Favorite,
-  Button_Menu,
   Button_Close,
   Button_Normal,
 } from '@components';
