@@ -7,7 +7,9 @@ export function Close({ onClick }: { onClick: () => void }) {
       className={`${styles.Button} ${styles.MenuButton}`}
       onClick={onClick}
     >
-      <X />
+      <i>
+        <X />
+      </i>
     </button>
   );
 }

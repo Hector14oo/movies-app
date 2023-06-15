@@ -14,7 +14,7 @@ export function Favorite({
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={toggleFav}
     >
-      {isFav ? <HeartFill /> : <HeartOutLine />}
+      <i>{isFav ? <HeartFill /> : <HeartOutLine />}</i>
     </button>
   );
 }
