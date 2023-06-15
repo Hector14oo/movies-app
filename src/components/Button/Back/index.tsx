@@ -7,7 +7,9 @@ export function Back({ onClick }: { onClick: () => void }) {
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={onClick}
     >
-      <ArrowLeft />
+      <i>
+        <ArrowLeft />
+      </i>
     </button>
   );
 }

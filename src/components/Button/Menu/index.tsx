@@ -7,7 +7,9 @@ export function Menu({ onClick }: { onClick: () => void }) {
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={onClick}
     >
-      <MenuIcon />
+      <i>
+        <MenuIcon />
+      </i>
     </button>
   );
 }
