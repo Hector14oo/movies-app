@@ -1,18 +1,18 @@
 'use client';
-import { useState } from 'react';
-import { Button, Input } from '@components';
+import { MouseEvent, useState } from 'react';
+import { Button_Normal, Input_Email, Input_Password } from '@components';
 import { Register } from 'assets/figures';
 import Link from 'next/link';
 
 import styles from '@styles/containers/Register.module.css';
 
 export function Container_Register() {
-  const [blind, setBlind] = useState(false);
+  const [isBlind, setIsBlind] = useState(false);
 
-  const handleBlind = () => {
-    setBlind(!blind);
+  const toggleBlind = () => {
+    setIsBlind(!isBlind);
   };
-  const handleClick = (e: Event) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     alert('Register');
   };
@@ -25,30 +25,21 @@ export function Container_Register() {
       />
       <form action=''>
         <h1>Register</h1>
-        <Input
-          type='EMAIL'
-          placeholder='Email'
-        />
-        <Input
-          type='EMAIL'
-          placeholder='Confirm Email'
-        />
-        <Input
-          blindState={blind}
-          blindHandler={handleBlind}
-          type='PASSWORD'
+        <Input_Email placeholder='Email' />
+        <Input_Email placeholder='Confirm Email' />
+        <Input_Password
+          isBlind={isBlind}
+          toggleBlind={toggleBlind}
           placeholder='Password'
         />
-        <Input
-          blindState={blind}
-          blindHandler={handleBlind}
-          type='PASSWORD'
+        <Input_Password
+          isBlind={isBlind}
+          toggleBlind={toggleBlind}
           placeholder='Confirm Password'
         />
-        <Button
-          type='NORMAL'
+        <Button_Normal
           text='Register'
-          handler={handleClick}
+          onClick={handleClick}
         />
         <span>
           Already have account? <Link href={'/account/login'}>Login</Link>

@@ -1,10 +1,11 @@
 import styles from '@styles/components/Buttons.module.css';
+import { MouseEventHandler } from 'react';
 
 export function Normal({
   onClick,
   text,
 }: {
-  onClick: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement> | (() => void);
   text: string;
 }) {
   return (

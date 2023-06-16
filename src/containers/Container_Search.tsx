@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, ChangeEvent } from 'react';
-import { Card, Input } from '@components';
+import { Card_Poster, Input_Searcher } from '@components';
 import { Search } from 'assets/figures';
 import styles from '@styles/containers/Search.module.css';
 
@@ -23,19 +23,20 @@ export function Container_Search() {
 
   return (
     <main className={styles.Search}>
-      <Input
-        type='SEARCH'
-        handler={handleOnChange}
+      <Input_Searcher
+        onChange={handleOnChange}
         value={value}
       />
       <section className={styles[className]}>
         {condition ? (
           <>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
-              <Card
-                id={i}
+              <Card_Poster
                 key={i}
-                type='POSTER'
+                id={i}
+                title='Super Mario Bros'
+                date='Apr 05, 2023'
+                votes='6.2'
               />
             ))}
           </>

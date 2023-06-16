@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Card } from '@components';
+import { Button_Link, Card_Poster } from '@components';
 import { useSessionContext } from '@context/SessionContext';
 import { Empty, Login } from 'assets/figures';
 import styles from '@styles/containers/Favorites.module.css';
@@ -12,14 +12,10 @@ export function Container_Favorites() {
   if (!loged)
     return (
       <main className={styles.Favorites}>
-        <Login
-          width={200}
-          height={250}
-        />
+        <Login />
         <h1>Please login to add your favorite movies to this section</h1>
-        <Button
+        <Button_Link
           href={'/account/login'}
-          type='LINK'
           text='Login'
         />
       </main>
@@ -28,10 +24,7 @@ export function Container_Favorites() {
   if (loged && !array.length)
     return (
       <main className={styles.Favorites}>
-        <Empty
-          width={250}
-          height={250}
-        />
+        <Empty />
         <h1>This section is empty, go and add some movies!</h1>
       </main>
     );
@@ -39,10 +32,12 @@ export function Container_Favorites() {
   return (
     <main className={styles.FavoritesFilled}>
       {array.map((_, i) => (
-        <Card
-          id={i}
+        <Card_Poster
           key={i}
-          type='POSTER'
+          id={i}
+          title='Super Mario Bros'
+          date='Apr 05, 2023'
+          votes='6.2'
         />
       ))}
     </main>

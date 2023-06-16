@@ -1,4 +1,4 @@
-import { Card } from '@components';
+import { Card_Poster, Card_Trailer } from '@components';
 import styles from '@styles/containers/Home.module.css';
 
 export function Container_Home() {
@@ -6,19 +6,23 @@ export function Container_Home() {
     <main className={styles.Main}>
       <h1>Trending Movies Of The Week</h1>
       <section>
-        <Card
+        <Card_Poster
           id={1}
-          type='POSTER'
+          title='John Wick 4'
+          date='March 22, 2023'
+          votes='7.2'
         />
-        <Card
+        <Card_Poster
           id={2}
-          type='POSTER'
+          title='Spiderman: Across The Spider Verse'
+          date='May 21, 2023'
+          votes='5.0'
         />
       </section>
       <h2>Lastest Trailers</h2>
       <section>
-        <Card type='TRAILER' />
-        <Card type='TRAILER' />
+        <Card_Trailer title='Super Mario Bros' />
+        <Card_Trailer title='Super-Man'/>
       </section>
     </main>
   );

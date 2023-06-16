@@ -1,4 +1,4 @@
-.Card {
+.Card article {
   min-width: 150px;
   min-height: 150px;
   width: 100%;
@@ -16,22 +16,22 @@
   background-position: center;
   box-shadow: var(--SHADOW);
 }
-.Card header,
-.Card footer {
+.Card article header,
+.Card article footer {
   width: 100%;
   height: auto;
 }
-.Card header {
+.Card article header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.Card footer h2 {
+.Card article footer h2 {
   font-size: var(--SMALL);
   color: var(--C1);
   font-weight: 700;
 }
-.Card footer p {
+.Card article footer p {
   color: var(--C1-70);
   font-size: var(--SMALLY);
   font-weight: 700;
