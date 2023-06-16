@@ -1,12 +1,12 @@
 'use client';
 import { MouseEvent, useState } from 'react';
-import { Button_Normal, Input_Email, Input_Password } from '@components';
-import { Login } from 'assets/figures';
+import { ButtonNormal, InputEmail, InputPassword } from '@components';
+import { Login as LoginFigure } from 'assets/figures';
 import Link from 'next/link';
 
 import styles from '@styles/containers/Login.module.css';
 
-export function Container_Login() {
+export function Login() {
   const [isBlind, setIsBlind] = useState(false);
 
   const toggleBlind = () => {
@@ -19,20 +19,17 @@ export function Container_Login() {
   };
   return (
     <main className={styles.Login}>
-      <Login
-        width={200}
-        height={250}
-      />
+      <LoginFigure />
       <form action=''>
         <h1>Login</h1>
-        <Input_Email placeholder='Email' />
-        <Input_Password
+        <InputEmail placeholder='Email' />
+        <InputPassword
           isBlind={isBlind}
           toggleBlind={toggleBlind}
           placeholder='Password'
         />
         <Link href={'/account/forgot-password'}>Forgot Password?</Link>
-        <Button_Normal
+        <ButtonNormal
           text='Login'
           onClick={handleClick}
         />

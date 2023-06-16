@@ -1,4 +1,4 @@
-import styles from '@styles/components/Buttons.module.css';
+import styles from '@styles/components/Cards.module.css';
 
 export function Artist({
   name,
@@ -8,7 +8,7 @@ export function Artist({
   character: string;
 }) {
   return (
-    <article className={styles.Card}>
+    <article className={styles.ArtistCard}>
       <main>
         <h2>{name}</h2>
         <p>{character}</p>

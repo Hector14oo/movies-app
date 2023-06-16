@@ -26,7 +26,10 @@
 }
 .Searcher > input {
   width: 100%;
+  height: 26px;
+  padding-left: 20px;
   color: var(--C3);
+  border-left: 2px solid var(--C2);
 }
 .Searcher > input::placeholder {
   color: var(--C3-50);

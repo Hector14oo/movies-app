@@ -1,12 +1,12 @@
 'use client';
 
 import { MouseEvent } from 'react';
-import { Button_Normal, Input_Email } from '@components';
-import { ForgotPassword } from 'assets/figures';
+import { ButtonNormal, InputEmail } from '@components';
+import { ForgotPassword as ForgotPasswordFigure } from 'assets/figures';
 
 import styles from '@styles/containers/ForgotPassword.module.css';
 
-export function Container_ForgotPassword() {
+export function ForgotPassword() {
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     alert('Email sent');
@@ -14,11 +14,11 @@ export function Container_ForgotPassword() {
 
   return (
     <main className={styles.ForgotPassword}>
-      <ForgotPassword />
+      <ForgotPasswordFigure />
       <form action=''>
         <h1>Password Recovery</h1>
-        <Input_Email placeholder='Email' />
-        <Button_Normal
+        <InputEmail placeholder='Email' />
+        <ButtonNormal
           text='Submit'
           onClick={handleClick}
         />

@@ -5,11 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import {
-  Logo,
-  Button_Close,
-  Button_Normal,
-} from '@components';
+import { Logo, ButtonClose, ButtonNormal } from '@components';
 import { Home, Glass, Star, HeartFill, AboutUs, ArrowLeft } from 'assets/icons';
 
 import styles from '@styles/components/FloatingMenu.module.css';
@@ -40,7 +36,7 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
     <nav className={styles.FloatingMenu}>
       <header>
         <Logo />
-        <Button_Close onClick={toggleMenu} />
+        <ButtonClose onClick={toggleMenu} />
       </header>
 
       <main>
@@ -60,7 +56,12 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
                   {icon}
                   {name}
                 </span>
-                {route === pathName && <ArrowLeft />}
+                {route === pathName && (
+                  <ArrowLeft
+                    width={16}
+                    height={16}
+                  />
+                )}
               </Link>
             </li>
           ))}
@@ -92,13 +93,13 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
               </main>
             </article>
 
-            <Button_Normal
+            <ButtonNormal
               text='Log Out'
               onClick={() => setLoged(false)}
             />
           </>
         ) : (
-          <Button_Normal
+          <ButtonNormal
             text='Login'
             onClick={() => setLoged(true)}
           />

@@ -15,9 +15,10 @@ export function Searcher({
       htmlFor='search'
       className={styles.Searcher}
     >
-      <i>
-        <Glass />
-      </i>
+      <Glass
+        width={26}
+        height={26}
+      />
       <input
         id='search'
         type='text'

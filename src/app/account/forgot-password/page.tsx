@@ -1,5 +1,5 @@
-import { Container_ForgotPassword } from '@containers';
+import { ForgotPassword } from '@containers';
 
 export default function ForgotPasswordPage() {
-  return <Container_ForgotPassword />;
+  return <ForgotPassword />;
 }

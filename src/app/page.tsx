@@ -1,5 +1,5 @@
-import { Container_Home } from '@containers';
+import { Home } from '@containers';
 
 export default function HomePage() {
-  return <Container_Home />;
+  return <Home />;
 }

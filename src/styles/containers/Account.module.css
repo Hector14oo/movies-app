@@ -56,7 +56,8 @@
   color: var(--C1);
   font-size: var(--SMALL);
 }
-.Account article main section > span {
+.Account article main section > span,
+.Account article main section > i {
   width: 46px;
   height: 46px;
   display: grid;

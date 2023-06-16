@@ -1,14 +1,13 @@
 'use client';
 
 import { useSessionContext } from '@context/SessionContext';
-import { Button_Link } from '@components';
-import { useRouter } from 'next/navigation';
+import { ButtonLink } from '@components';
 import Image from 'next/image';
 
 import { Cake, Location } from 'assets/icons';
 import styles from '@styles/containers/Account.module.css';
 
-export function Container_Account() {
+export function Account() {
   const { setLoged } = useSessionContext();
 
   const handleClick = () => {
@@ -37,30 +36,24 @@ export function Container_Account() {
             <span>GEN</span> Female
           </section>
           <section>
-            <span>
-              <Cake
-                width={20}
-                height={20}
-              />
-            </span>
+            <i>
+              <Cake />
+            </i>
             04/05/2002
           </section>
           <section>
             <span>AGE</span> 21
           </section>
           <section>
-            <span>
-              <Location
-                width={20}
-                height={26}
-              />
-            </span>
+            <i>
+              <Location />
+            </i>
             Antioquia, Colombia
           </section>
         </main>
 
         <footer>
-          <Button_Link
+          <ButtonLink
             onClick={handleClick}
             text='Log Out'
             href={'/home'}
