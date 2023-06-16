@@ -1,20 +1,21 @@
+import { MouseEventHandler } from 'react';
 import Linker from 'next/link';
+
 import styles from '@styles/components/Buttons.module.css';
 
-export function Link({
-  href,
-  text,
-  onClick,
-}: {
+interface ButtonProps {
   href: string;
   text: string;
-  onClick?: () => void;
-}) {
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+}
+
+export function Link({ href, text, onClick }: ButtonProps) {
   return (
     <Linker
       href={href}
       className={`${styles.Button}`}
       onClick={onClick}
+      style={text === 'Log Out' ? { backgroundColor: 'var(--BAD)' } : {}}
     >
       {text}
     </Linker>

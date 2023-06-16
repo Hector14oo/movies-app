@@ -12,7 +12,10 @@ export function Email({
       className={styles.FormInput}
     >
       <i>
-        <At />
+        <At
+          width={20}
+          height={20}
+        />
       </i>
       <input
         type='email'

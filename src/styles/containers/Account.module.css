@@ -55,14 +55,14 @@
 
   color: var(--C1);
   font-size: var(--SMALL);
+  font-weight: 500;
 }
-.Account article main section > span,
-.Account article main section > i {
+.Account article main section > span {
   width: 46px;
   height: 46px;
   display: grid;
   place-items: center;
-  font-size: var(--SMALLY);
+  font-size: var(--SMALL);
 
   background-color: var(--C2);
   border-radius: 50%;

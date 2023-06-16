@@ -1,7 +1,13 @@
+import { MouseEventHandler } from 'react';
 import { X } from 'assets/icons';
+
 import styles from '@styles/components/Buttons.module.css';
 
-export function Close({ onClick }: { onClick: () => void }) {
+interface ButtonProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+export function Close({ onClick }: ButtonProps) {
   return (
     <button
       className={`${styles.Button} ${styles.MenuButton}`}

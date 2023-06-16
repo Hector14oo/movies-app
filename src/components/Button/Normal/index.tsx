@@ -1,13 +1,13 @@
-import styles from '@styles/components/Buttons.module.css';
 import { MouseEventHandler } from 'react';
 
-export function Normal({
-  onClick,
-  text,
-}: {
-  onClick: MouseEventHandler<HTMLButtonElement> | (() => void);
+import styles from '@styles/components/Buttons.module.css';
+
+interface ButtonProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
   text: string;
-}) {
+}
+
+export function Normal({ onClick, text }: ButtonProps) {
   return (
     <button
       className={`${styles.Button}`}
