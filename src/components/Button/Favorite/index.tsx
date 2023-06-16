@@ -1,14 +1,14 @@
+import { MouseEventHandler } from 'react';
 import { HeartFill, HeartOutLine } from 'assets/icons';
 
 import styles from '@styles/components/Buttons.module.css';
 
-export function Favorite({
-  isFav,
-  toggleFav,
-}: {
+interface ButtonProps {
   isFav: boolean;
-  toggleFav: () => void;
-}) {
+  toggleFav: MouseEventHandler<HTMLButtonElement>;
+}
+
+export function Favorite({ isFav, toggleFav }: ButtonProps) {
   return (
     <button
       className={`${styles.Button} ${styles.SpecialButton}`}

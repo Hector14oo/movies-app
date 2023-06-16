@@ -33,21 +33,27 @@ export function Account() {
 
         <main>
           <section>
-            <span>GEN</span> Female
+            <span>GE</span> Female
           </section>
           <section>
-            <i>
-              <Cake />
-            </i>
+            <span>
+              <Cake
+                width={26}
+                height={26}
+              />
+            </span>
             04/05/2002
           </section>
           <section>
-            <span>AGE</span> 21
+            <span>AG</span> 21
           </section>
           <section>
-            <i>
-              <Location />
-            </i>
+            <span>
+              <Location
+                width={26}
+                height={28}
+              />
+            </span>
             Antioquia, Colombia
           </section>
         </main>
@@ -56,7 +62,7 @@ export function Account() {
           <ButtonLink
             onClick={handleClick}
             text='Log Out'
-            href={'/home'}
+            href={'/'}
           />
         </footer>
       </article>

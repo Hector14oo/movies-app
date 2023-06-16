@@ -38,10 +38,10 @@ export function Trending() {
     <main className={styles.Trending}>
       <div className={styles.Buttons}>
         <ButtonBack
-          handleClick={(e: SyntheticEvent) => handleClick({ e, type: 'PREV' })}
+          onClick={(e: SyntheticEvent) => handleClick({ e, type: 'PREV' })}
         />
         <ButtonBack
-          handleClick={(e: SyntheticEvent) => handleClick({ e, type: 'NEXT' })}
+          onClick={(e: SyntheticEvent) => handleClick({ e, type: 'NEXT' })}
         />
       </div>
       <div
