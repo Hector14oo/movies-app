@@ -7,9 +7,10 @@ export function Menu({ onClick }: { onClick: () => void }) {
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={onClick}
     >
-      <i>
-        <MenuIcon />
-      </i>
+      <MenuIcon
+        width={16}
+        height={16}
+      />
     </button>
   );
 }

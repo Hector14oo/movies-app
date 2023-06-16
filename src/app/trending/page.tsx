@@ -1,5 +1,5 @@
-import { Container_Trending } from '@containers';
+import { Trending } from '@containers';
 
 export default function TrendingPage() {
-  return <Container_Trending />;
+  return <Trending />;
 }

@@ -1,25 +1,25 @@
 export {
-  Back as Button_Back,
-  Close as Button_Close,
-  Favorite as Button_Favorite,
-  Link as Button_Link,
-  Menu as Button_Menu,
-  Normal as Button_Normal,
+  Back as ButtonBack,
+  Close as ButtonClose,
+  Favorite as ButtonFavorite,
+  Link as ButtonLink,
+  Menu as ButtonMenu,
+  Normal as ButtonNormal,
 } from './Button';
 
 export {
-  Artist as Card_Artist,
-  Poster as Card_Poster,
-  Trailer as Card_Trailer,
+  Artist as CardArtist,
+  Poster as CardPoster,
+  Trailer as CardTrailer,
 } from './Card';
 
 export { FloatingMenu } from './FloatingMenu';
 export { Header } from './Header';
 
 export {
-  Email as Input_Email,
-  Password as Input_Password,
-  Searcher as Input_Searcher,
+  Email as InputEmail,
+  Password as InputPassword,
+  Searcher as InputSearcher,
 } from './Input';
 
 export { Logo } from './Logo';

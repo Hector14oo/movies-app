@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import {
-  Button_Back,
-  Button_Menu,
-  Button_Favorite,
+  ButtonBack,
+  ButtonMenu,
+  ButtonFavorite,
   FloatingMenu,
 } from '@components';
 import styles from '@styles/components/Header.module.css';
@@ -46,18 +46,18 @@ export function Header() {
             : {}
         }
       >
-        <Button_Back />
+        <ButtonBack />
 
         {!excludeRoutes.includes(path) && (
           <>
             <span>{title}</span>
             {path.includes('/movie-details/') ? (
-              <Button_Favorite
+              <ButtonFavorite
                 isFav={favorite}
                 toggleFav={() => setFavorite(!favorite)}
               />
             ) : (
-              <Button_Menu onClick={toggleMenu} />
+              <ButtonMenu onClick={toggleMenu} />
             )}
           </>
         )}

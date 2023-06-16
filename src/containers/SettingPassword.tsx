@@ -1,13 +1,13 @@
 'use client';
 
 import { MouseEvent, useState } from 'react';
-import { Button_Normal, Input_Password } from '@components';
-import { SettingPassword } from 'assets/figures';
+import { ButtonNormal, InputPassword } from '@components';
+import { SettingPassword as SettingPasswordFigure } from 'assets/figures';
 import { useRouter } from 'next/navigation';
 
 import styles from '@styles/containers/SettingPasswor.module.css';
 
-export function Container_SettingPasswor() {
+export function SettingPassword() {
   const [isBlind, setIsBlind] = useState(false);
   const { push } = useRouter();
 
@@ -22,23 +22,20 @@ export function Container_SettingPasswor() {
   };
   return (
     <main className={styles.SettingPasswor}>
-      <SettingPassword
-        width={250}
-        height={250}
-      />
+      <SettingPasswordFigure />
       <form action=''>
         <h1>Set New Password</h1>
-        <Input_Password
+        <InputPassword
           isBlind={isBlind}
           toggleBlind={toggleBlind}
           placeholder='New Password'
         />
-        <Input_Password
+        <InputPassword
           isBlind={isBlind}
           toggleBlind={toggleBlind}
           placeholder='Confirm New Password'
         />
-        <Button_Normal
+        <ButtonNormal
           text='Submit'
           onClick={handleClick}
         />

@@ -28,7 +28,7 @@
   border-radius: var(--BR-2);
   background-color: var(--C2-B);
 }
-.SpecialButton > i > svg {
+.SpecialButton > svg {
   fill: var(--C2);
   pointer-events: none;
 }

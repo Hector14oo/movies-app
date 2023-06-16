@@ -1,11 +1,11 @@
 'use client';
 
-import { Button_Link, Card_Poster } from '@components';
+import { ButtonLink, CardPoster } from '@components';
 import { useSessionContext } from '@context/SessionContext';
 import { Empty, Login } from 'assets/figures';
 import styles from '@styles/containers/Favorites.module.css';
 
-export function Container_Favorites() {
+export function Favorites() {
   const { loged } = useSessionContext();
   const array: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -14,7 +14,7 @@ export function Container_Favorites() {
       <main className={styles.Favorites}>
         <Login />
         <h1>Please login to add your favorite movies to this section</h1>
-        <Button_Link
+        <ButtonLink
           href={'/account/login'}
           text='Login'
         />
@@ -32,7 +32,7 @@ export function Container_Favorites() {
   return (
     <main className={styles.FavoritesFilled}>
       {array.map((_, i) => (
-        <Card_Poster
+        <CardPoster
           key={i}
           id={i}
           title='Super Mario Bros'

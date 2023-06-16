@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-import { Button_Favorite, Rank } from '@components';
+import { ButtonFavorite, Rank } from '@components';
 import styles from '@styles/components/Cards.module.css';
 
 export function Poster({
@@ -28,7 +28,7 @@ export function Poster({
     >
       <article>
         <header>
-          <Button_Favorite
+          <ButtonFavorite
             isFav={favorite}
             toggleFav={() => setFavorite(!favorite)}
           />
