@@ -1,6 +1,7 @@
-import { Card, Rank } from '@components';
-import styles from '@styles/containers/MovieDetails.module.css';
+import { Card_Artist, Rank } from '@components';
 import Image from 'next/image';
+
+import styles from '@styles/containers/MovieDetails.module.css';
 
 export function Container_MovieDetails({ id }: { id: number }) {
   return (
@@ -29,9 +30,9 @@ export function Container_MovieDetails({ id }: { id: number }) {
             foes.
           </p>
           <section>
-            <Card type='POSTER' />
-            <Card type='POSTER' />
-            <Card type='POSTER' />
+            <Card_Artist name='Keanu Reeves' character='John Wick' />
+            <Card_Artist name='Keanu Reeves' character='John Wick' />
+            <Card_Artist name='Keanu Reeves' character='John Wick' />
           </section>
         </article>
       </main>

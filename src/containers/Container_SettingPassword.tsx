@@ -1,20 +1,21 @@
 'use client';
 
-import { useState } from 'react';
-import { Button, Input } from '@components';
+import { MouseEvent, useState } from 'react';
+import { Button_Normal, Input_Password } from '@components';
 import { SettingPassword } from 'assets/figures';
 import { useRouter } from 'next/navigation';
 
 import styles from '@styles/containers/SettingPasswor.module.css';
 
 export function Container_SettingPasswor() {
-  const [blind, setBlind] = useState(false);
+  const [isBlind, setIsBlind] = useState(false);
   const { push } = useRouter();
 
-  const handleBlind = () => {
-    setBlind(!blind);
+  const toggleBlind = () => {
+    setIsBlind(!isBlind);
   };
-  const handleClick = (e: Event) => {
+
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     alert('Password Set');
     push('/');
@@ -27,22 +28,19 @@ export function Container_SettingPasswor() {
       />
       <form action=''>
         <h1>Set New Password</h1>
-        <Input
-          blindState={blind}
-          blindHandler={handleBlind}
-          type='PASSWORD'
+        <Input_Password
+          isBlind={isBlind}
+          toggleBlind={toggleBlind}
           placeholder='New Password'
         />
-        <Input
-          blindState={blind}
-          blindHandler={handleBlind}
-          type='PASSWORD'
+        <Input_Password
+          isBlind={isBlind}
+          toggleBlind={toggleBlind}
           placeholder='Confirm New Password'
         />
-        <Button
-          type='NORMAL'
+        <Button_Normal
           text='Submit'
-          handler={handleClick}
+          onClick={handleClick}
         />
       </form>
     </main>

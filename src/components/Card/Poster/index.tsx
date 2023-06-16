@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
 
 import { Button_Favorite, Rank } from '@components';
-import styles from '@styles/components/Buttons.module.css';
+import styles from '@styles/components/Cards.module.css';
 
 export function Poster({
   id,
@@ -17,15 +17,16 @@ export function Poster({
   title: string;
   date: string;
   votes: string;
-  cssVar: object;
+  cssVar?: object;
 }) {
   const [favorite, setFavorite] = useState(false);
   return (
-    <Link href={`/movie-details/${id}`}>
-      <article
-        className={styles.Card}
-        style={cssVar}
-      >
+    <Link
+      href={`/movie-details/${id}`}
+      className={styles.Card}
+      style={cssVar}
+    >
+      <article>
         <header>
           <Button_Favorite
             isFav={favorite}

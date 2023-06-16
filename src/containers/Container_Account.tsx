@@ -1,7 +1,7 @@
 'use client';
 
 import { useSessionContext } from '@context/SessionContext';
-import { Button } from '@components';
+import { Button_Link } from '@components';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -10,11 +10,9 @@ import styles from '@styles/containers/Account.module.css';
 
 export function Container_Account() {
   const { setLoged } = useSessionContext();
-  const { push } = useRouter();
 
   const handleClick = () => {
     setLoged(false);
-    push('/');
   };
   return (
     <main className={styles.Account}>
@@ -62,10 +60,10 @@ export function Container_Account() {
         </main>
 
         <footer>
-          <Button
-            type='NORMAL'
-            handler={handleClick}
+          <Button_Link
+            onClick={handleClick}
             text='Log Out'
+            href={'/home'}
           />
         </footer>
       </article>
