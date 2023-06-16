@@ -15,3 +15,8 @@ export { PadLock } from './PadLock';
 export { Play } from './Play';
 export { Star } from './Star';
 export { X } from './X';
+
+export interface IconProps {
+  width: number;
+  height: number;
+}
