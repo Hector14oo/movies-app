@@ -35,6 +35,7 @@
   font-size: var(--SMALL);
   color: var(--C1);
   font-weight: 700;
+  margin-bottom: 4px;
 }
 .Card footer p {
   color: var(--C1-70);

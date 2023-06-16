@@ -16,7 +16,8 @@
 .MenuButton {
   width: 46px;
   height: 46px;
-  padding: 8px;
+  display: grid;
+  place-items: center;
 
   border-radius: var(--BR-3);
 }

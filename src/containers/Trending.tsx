@@ -1,4 +1,5 @@
 'use client';
+
 import { SyntheticEvent, useRef } from 'react';
 import { ButtonBack, CardPoster } from '@components';
 import styles from '@styles/containers/Trending.module.css';
