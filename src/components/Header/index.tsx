@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { Button, FloatingMenu } from '@components';
+import { usePathname } from 'next/navigation';
+import {
+  ButtonBack,
+  ButtonMenu,
+  ButtonFavorite,
+  FloatingMenu,
+} from '@components';
 import styles from '@styles/components/Header.module.css';
 
 const routes: Record<string, string> = {
@@ -14,32 +19,50 @@ const routes: Record<string, string> = {
   '/account': 'Account',
 };
 
+const excludeRoutes: string[] = [
+  '/account',
+  '/account/login',
+  '/account/register',
+  '/account/forgot-password',
+  '/account/setting-password',
+];
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [favorite, setFavorite] = useState(false);
   const path = usePathname();
-  const { back } = useRouter();
 
-  const handleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  const title: string | null = routes[path];
+  const title = routes[path];
   const className = path === '/' ? styles['Hidden'] : '';
 
   return (
     <header className={`${styles.Header} ${className}`}>
       <nav
-        style={path === '/account' ? { backgroundColor: 'transparent' } : {}}
+        style={
+          excludeRoutes.includes(path) || path.includes('/movie-details/')
+            ? { backgroundColor: 'transparent' }
+            : {}
+        }
       >
-        <Button
-          handler={back}
-          type='BACK'
-        />
-        <span>{title}</span>
-        <Button
-          handler={handleMenu}
-          type='MENU'
-        />
+        <ButtonBack />
+
+        {!excludeRoutes.includes(path) && (
+          <>
+            <span>{title}</span>
+            {path.includes('/movie-details/') ? (
+              <ButtonFavorite
+                isFav={favorite}
+                toggleFav={() => setFavorite(!favorite)}
+              />
+            ) : (
+              <ButtonMenu onClick={toggleMenu} />
+            )}
+          </>
+        )}
       </nav>
-      {isOpen && <FloatingMenu handler={handleMenu} />}
+      {isOpen && <FloatingMenu toggleMenu={toggleMenu} />}
     </header>
   );
 }

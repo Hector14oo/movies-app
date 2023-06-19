@@ -1,5 +1,5 @@
-import { Container_Search } from '@containers';
+import { Search } from '@containers';
 
 export default function SearchPage() {
-  return <Container_Search />;
+  return <Search />;
 }

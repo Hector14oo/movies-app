@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, ChangeEvent } from 'react';
-import { Card, InputSearcher } from '@components';
-import { Search } from 'assets/figures';
+import { CardPoster, InputSearcher } from '@components';
+import { Search as SearchFigure } from 'assets/figures';
 import styles from '@styles/containers/Search.module.css';
 
-export function Container_Search() {
+export function Search() {
   const [value, setValue] = useState('');
   const [condition, setCondition] = useState(false);
   const className = condition ? 'GRID' : 'FLEX';
@@ -24,25 +24,25 @@ export function Container_Search() {
   return (
     <main className={styles.Search}>
       <InputSearcher
-        handler={handleOnChange}
+        onChange={handleOnChange}
         value={value}
       />
       <section className={styles[className]}>
         {condition ? (
           <>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
-              <Card
+              <CardPoster
                 key={i}
-                type='POSTER'
+                id={i}
+                title='Super Mario Bros'
+                date='Apr 05, 2023'
+                votes='6.2'
               />
             ))}
           </>
         ) : (
           <>
-            <Search
-              width={225}
-              height={200}
-            />
+            <SearchFigure />
             <h1>The movies you search for will appear here.</h1>
           </>
         )}
