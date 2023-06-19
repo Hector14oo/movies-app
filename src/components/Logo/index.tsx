@@ -5,7 +5,10 @@ export function Logo() {
   return (
     <span className={styles.Logo}>
       {'<'}
-      <PopCorn />
+      <PopCorn
+        width={36}
+        height={36}
+      />
       {'/>'}
     </span>
   );

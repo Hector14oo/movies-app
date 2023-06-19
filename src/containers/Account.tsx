@@ -1,14 +1,18 @@
-'use client'
+'use client';
 
 import { useSessionContext } from '@context/SessionContext';
-import { Button } from '@components';
+import { ButtonLink } from '@components';
 import Image from 'next/image';
 
 import { Cake, Location } from 'assets/icons';
 import styles from '@styles/containers/Account.module.css';
 
-export function Container_Account() {
+export function Account() {
   const { setLoged } = useSessionContext();
+
+  const handleClick = () => {
+    setLoged(false);
+  };
   return (
     <main className={styles.Account}>
       <figure>
@@ -29,25 +33,25 @@ export function Container_Account() {
 
         <main>
           <section>
-            <span>GEN</span> Female
+            <span>GE</span> Female
           </section>
           <section>
             <span>
               <Cake
-                width={20}
-                height={20}
+                width={26}
+                height={26}
               />
             </span>
             04/05/2002
           </section>
           <section>
-            <span>AGE</span> 21
+            <span>AG</span> 21
           </section>
           <section>
             <span>
               <Location
-                width={20}
-                height={26}
+                width={26}
+                height={28}
               />
             </span>
             Antioquia, Colombia
@@ -55,11 +59,10 @@ export function Container_Account() {
         </main>
 
         <footer>
-          <Button
-            type='LINK'
-            handler={() => setLoged(false)}
-            href={'/'}
+          <ButtonLink
+            onClick={handleClick}
             text='Log Out'
+            href={'/'}
           />
         </footer>
       </article>

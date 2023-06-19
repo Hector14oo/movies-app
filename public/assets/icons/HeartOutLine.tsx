@@ -1,10 +1,6 @@
-export function HeartOutLine({
-  width = 18,
-  height = 18,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function HeartOutLine({ width, height }: IconProps) {
   return (
     <svg
       width={width}

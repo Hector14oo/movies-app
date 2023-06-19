@@ -68,6 +68,7 @@ body {
   grid-template-rows: auto 1fr;
   position: relative;
   gap: 20px;
+  scroll-behavior: smooth;
 
   color: var(--C3);
   background: var(--C1);

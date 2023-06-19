@@ -1,15 +1,18 @@
 'use client';
+
 import { SyntheticEvent, useRef } from 'react';
-import { Button, Card } from '@components';
+import { ButtonBack, CardPoster } from '@components';
 import styles from '@styles/containers/Trending.module.css';
 
-export function Container_Trending() {
+interface handleClickTypes {
+  e: SyntheticEvent;
+  type: 'PREV' | 'NEXT';
+}
+
+export function Trending() {
   const slider = useRef<HTMLDivElement>(null);
 
-  const handleClick = (
-    e: SyntheticEvent,
-    { type }: { type: 'PREV' | 'NEXT' }
-  ) => {
+  const handleClick = ({ e, type }: handleClickTypes) => {
     if (!slider.current?.children.length) return;
     const button = e.target as HTMLButtonElement;
     const { current } = slider;
@@ -35,13 +38,11 @@ export function Container_Trending() {
   return (
     <main className={styles.Trending}>
       <div className={styles.Buttons}>
-        <Button
-          type='BACK'
-          handler={(e) => handleClick(e, { type: 'PREV' })}
+        <ButtonBack
+          onClick={(e: SyntheticEvent) => handleClick({ e, type: 'PREV' })}
         />
-        <Button
-          type='BACK'
-          handler={(e) => handleClick(e, { type: 'NEXT' })}
+        <ButtonBack
+          onClick={(e: SyntheticEvent) => handleClick({ e, type: 'NEXT' })}
         />
       </div>
       <div
@@ -49,10 +50,13 @@ export function Container_Trending() {
         className={styles.Slider}
       >
         {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => (
-          <Card
+          <CardPoster
             key={'POSTER-' + i}
-            type='POSTER'
-            newStyles={{ '--id': i }}
+            id={i}
+            title='Super Mario Bros'
+            date='Apr 05, 2023'
+            votes='6.2'
+            cssVar={{ '--id': i }}
           />
         ))}
       </div>
