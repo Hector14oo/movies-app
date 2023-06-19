@@ -1,5 +1,5 @@
-import { Container_Favorites } from '@containers';
+import { Favorites } from '@containers';
 
 export default function FavoritesPage() {
-  return <Container_Favorites />;
+  return <Favorites />;
 }

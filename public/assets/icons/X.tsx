@@ -1,10 +1,6 @@
-export function X({
-  width = 32,
-  height = 32,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function X({ width, height }: IconProps) {
   return (
     <svg
       width={width}

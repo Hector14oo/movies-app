@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Logo, Button } from '@components';
+import { Logo, ButtonClose, ButtonNormal } from '@components';
 import { Home, Glass, Star, HeartFill, AboutUs, ArrowLeft } from 'assets/icons';
 
 import styles from '@styles/components/FloatingMenu.module.css';
@@ -23,23 +23,20 @@ const PATHS = [
   { route: '/about', name: 'About Us', icon: <AboutUs {...Sizes} /> },
 ];
 
-export function FloatingMenu({ handler }: { handler: () => void }) {
+export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
   const { loged, setLoged } = useSessionContext();
   const pathName = usePathname();
 
   const handleLink = (route?: string) => {
     if (pathName === route) return;
-    handler();
+    toggleMenu();
   };
 
   return (
     <nav className={styles.FloatingMenu}>
       <header>
         <Logo />
-        <Button
-          handler={handler}
-          type='CLOSE'
-        />
+        <ButtonClose onClick={toggleMenu} />
       </header>
 
       <main>
@@ -59,7 +56,12 @@ export function FloatingMenu({ handler }: { handler: () => void }) {
                   {icon}
                   {name}
                 </span>
-                {route === pathName && <ArrowLeft />}
+                {route === pathName && (
+                  <ArrowLeft
+                    width={16}
+                    height={16}
+                  />
+                )}
               </Link>
             </li>
           ))}
@@ -91,17 +93,15 @@ export function FloatingMenu({ handler }: { handler: () => void }) {
               </main>
             </article>
 
-            <Button
+            <ButtonNormal
               text='Log Out'
-              handler={() => setLoged(false)}
-              type='NORMAL'
+              onClick={() => setLoged(false)}
             />
           </>
         ) : (
-          <Button
+          <ButtonNormal
             text='Login'
-            handler={() => setLoged(true)}
-            type='NORMAL'
+            onClick={() => setLoged(true)}
           />
         )}
       </footer>

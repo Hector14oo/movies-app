@@ -1,10 +1,6 @@
-export function Location({
-  width = 20,
-  height = 26,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function Location({ width, height }: IconProps) {
   return (
     <svg
       width={width}

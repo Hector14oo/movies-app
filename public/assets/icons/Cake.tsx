@@ -1,10 +1,6 @@
-export function Cake({
-  width = 20,
-  height = 20,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function Cake({ width, height }: IconProps) {
   return (
     <svg
       width={width}

@@ -1,10 +1,9 @@
+import { IconProps } from ".";
+
 export function AboutUs({
-  width = 38,
-  height = 38,
-}: {
-  width?: number;
-  height?: number;
-}) {
+  width,
+  height,
+}: IconProps) {
   return (
     <svg
       width={width}

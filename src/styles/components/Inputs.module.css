@@ -14,8 +14,8 @@
 .Searcher:hover {
   box-shadow: 0 4px 8px var(--C2-B);
 }
-.Searcher > svg{
-  fill: var(--C2)
+.Searcher > svg {
+  fill: var(--C2);
 }
 .Searcher > div {
   width: 2px;
@@ -26,8 +26,49 @@
 }
 .Searcher > input {
   width: 100%;
+  height: 26px;
+  padding-left: 20px;
   color: var(--C3);
+  border-left: 2px solid var(--C2);
 }
 .Searcher > input::placeholder {
   color: var(--C3-50);
+}
+
+.FormInput {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.FormInput svg {
+  fill: var(--C3-50);
+}
+.FormInput i {
+  width: 20px;
+}
+.FormInput input {
+  width: 100%;
+  height: 100%;
+  padding-right: 20px;
+  color: inherit;
+  font-weight: 500;
+
+  color: var(--C3-50);
+  border-bottom: 1px solid var(--C3-50);
+}
+.FormInput i:last-of-type {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  margin: auto 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  color: var(--C3-50);
+  background-color: var(--C1);
 }

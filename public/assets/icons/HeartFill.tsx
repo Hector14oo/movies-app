@@ -1,10 +1,6 @@
-export function HeartFill({
-  width = 18,
-  height = 18,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function HeartFill({ width, height }: IconProps) {
   return (
     <svg
       width={width}
