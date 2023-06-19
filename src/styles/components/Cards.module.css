@@ -4,9 +4,6 @@
   width: 100%;
   height: 100%;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   border-radius: var(--BR-3);
   background: var(--GRADIENT),
@@ -15,6 +12,14 @@
   background-size: cover;
   background-position: center;
   box-shadow: var(--SHADOW);
+  text-decoration: none;
+}
+.Card article{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .Card header,
 .Card footer {
@@ -30,6 +35,7 @@
   font-size: var(--SMALL);
   color: var(--C1);
   font-weight: 700;
+  margin-bottom: 4px;
 }
 .Card footer p {
   color: var(--C1-70);
@@ -57,5 +63,38 @@
   width: 100%;
   color: var(--C1);
   font-size: var(--SMALL);
+  font-weight: 700;
+}
+
+.ArtistCard {
+  min-width: 100px;
+  min-height: 150px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: var(--GRADIENT),
+  url('https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZPEQXUEQKFELNAMFUTACTVA6NY.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--BR-3);
+  box-shadow: var(--SHADOW);
+}
+.ArtistCard main {
+  width: 100%;
+  height: fit-content;
+}
+.ArtistCard main h2 {
+  font-size: var(--SMALL);
+  color: var(--C1);
+  font-weight: 700;
+}
+.ArtistCard main p {
+  color: var(--C1-70);
+  font-size: var(--SMALLY);
   font-weight: 700;
 }

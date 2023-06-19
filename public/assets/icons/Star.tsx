@@ -1,10 +1,6 @@
-export function Star({
-  width = 38,
-  height = 38,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function Star({ width, height }: IconProps) {
   return (
     <svg
       width={width}

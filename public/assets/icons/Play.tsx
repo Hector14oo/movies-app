@@ -1,10 +1,6 @@
-export function Play({
-  width = 25,
-  height = 29,
-}: {
-  width?: number;
-  height?: number;
-}) {
+import { IconProps } from '.';
+
+export function Play({ width, height }: IconProps) {
   return (
     <svg
       width={width}

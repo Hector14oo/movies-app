@@ -1,5 +1,10 @@
-export { Container_Home } from './Container_Home';
-export { Container_Search } from './Container_Search';
-export { Container_Trending } from './Container_Trending';
-export { Container_Favorites } from './Container_Favorites';
-export { Container_Account } from './Container_Account';
+export { Home } from './Home';
+export { Search } from './Search';
+export { Trending } from './Trending';
+export { Favorites } from './Favorites';
+export { Account } from './Account';
+export { Login } from './Login';
+export { Register } from './Register';
+export { ForgotPassword } from './ForgotPassword';
+export { SettingPassword } from './SettingPassword';
+export { MovieDetails } from './MovieDetails';

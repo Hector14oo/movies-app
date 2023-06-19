@@ -1,5 +1,5 @@
-import { Container_Account } from '@containers';
+import { Account } from '@containers';
 
 export default function AccountPage() {
-  return <Container_Account />;
+  return <Account />;
 }
