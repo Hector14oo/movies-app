@@ -6,11 +6,8 @@
   padding: 20px;
 
   border-radius: var(--BR-3);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   box-shadow: var(--SHADOW);
-  text-decoration: none;
+  overflow: hidden;
 }
 .Card article{
   width: 100%;
