@@ -1,15 +1,15 @@
 import { ChangeEvent } from 'react';
-import { Glass } from 'assets/icons';
+import { Glass, X } from 'assets/icons';
 
 import styles from '@styles/components/Inputs.module.css';
 
-export function Searcher({
-  onChange,
-  value,
-}: {
+interface SearcherType {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   value: string;
-}) {
+  reset: () => void;
+}
+
+export function Searcher({ onChange, value, reset }: SearcherType) {
   return (
     <label
       htmlFor='search'
@@ -26,6 +26,16 @@ export function Searcher({
         onChange={onChange}
         value={value}
       />
+
+      <button
+        onClick={reset}
+        style={{ opacity: `${value.length ? 1 : 0}` }}
+      >
+        <X
+          width={16}
+          height={16}
+        />
+      </button>
     </label>
   );
 }
