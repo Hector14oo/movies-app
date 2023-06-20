@@ -21,16 +21,23 @@ interface MovieType {
 }
 
 export function useSearch(value: string) {
-  const [prevValue, setPrevValue] = useState('');
   const [movies, setMovies] = useState<MovieType[]>([]);
+  const [error, setError] = useState(false);
+  const [prevValue, setPrevValue] = useState('');
 
   useEffect(() => {
+    setError(false);
     if (!value.length || value === prevValue) return;
 
     setPrevValue(value);
 
     const timer = setTimeout(() => {
       fecthApi(searchEndPoint(value)).then(({ results }) => {
+        if (!results.length) {
+          setError(true);
+          return;
+        }
+
         setMovies(
           results.map((movie: ResultType) => ({
             id: movie.id,
@@ -45,8 +52,8 @@ export function useSearch(value: string) {
     }, 500);
 
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  return movies;
+  return { movies, error };
 }
