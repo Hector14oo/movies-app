@@ -2,23 +2,24 @@
 
 import { useState, ChangeEvent } from 'react';
 import { CardPoster, InputSearcher } from '@components';
+import { useSearch } from '@hooks/useSearch';
 import { Search as SearchFigure } from 'assets/figures';
+
 import styles from '@styles/containers/Search.module.css';
 
 export function Search() {
   const [value, setValue] = useState('');
-  const [condition, setCondition] = useState(false);
-  const className = condition ? 'GRID' : 'FLEX';
+  const { movies, error } = useSearch(value);
+  const className = error ? 'FLEX' : movies.length ? 'GRID' : 'FLEX';
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+  };
 
-    if (e.target.value.length <= 0) {
-      setCondition(false);
-      return;
-    }
+  const shorTitle = (title: string) => {
+    if (title.length > 40) return title.substring(0, 40).concat('...');
 
-    setCondition(true);
+    return title;
   };
 
   return (
@@ -26,24 +27,36 @@ export function Search() {
       <InputSearcher
         onChange={handleOnChange}
         value={value}
+        reset={() => setValue('')}
       />
       <section className={styles[className]}>
-        {condition ? (
+        {error ? (
           <>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, i) => (
-              <CardPoster
-                key={i}
-                id={i}
-                title='Super Mario Bros'
-                date='Apr 05, 2023'
-                votes='6.2'
-              />
-            ))}
+            <SearchFigure />
+            <h1>No results found</h1>
           </>
         ) : (
           <>
-            <SearchFigure />
-            <h1>The movies you search for will appear here.</h1>
+            {movies.length ? (
+              <>
+                {movies.map(({ id, date, title, overview, rank, poster }) => (
+                  <CardPoster
+                    key={id}
+                    id={id}
+                    date={date || 'Unknown date'}
+                    title={shorTitle(title)}
+                    overview={overview}
+                    votes={rank}
+                    poster={poster}
+                  />
+                ))}
+              </>
+            ) : (
+              <>
+                <SearchFigure />
+                <h1>The movies you search for will appear here.</h1>
+              </>
+            )}
           </>
         )}
       </section>

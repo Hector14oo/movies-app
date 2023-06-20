@@ -12,7 +12,7 @@
 .GRID{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 150px;
+  grid-auto-rows: auto;
 }
 .Search > section > h1{
   width: 100%;
