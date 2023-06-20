@@ -11,7 +11,7 @@ interface PosterProps {
   title: string;
   date: string;
   votes: number;
-  overview: string;
+  overview?: string;
   poster: string;
   cssVar?: object;
 }
