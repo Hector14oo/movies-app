@@ -21,11 +21,14 @@ interface MovieType {
 }
 
 export function useSearch(value: string) {
+  const [prevValue, setPrevValue] = useState('');
   const [movies, setMovies] = useState<MovieType[]>([]);
 
   useEffect(() => {
-    if (!value.length) return;
-    
+    if (!value.length || value === prevValue) return;
+
+    setPrevValue(value);
+
     const timer = setTimeout(() => {
       fecthApi(searchEndPoint(value)).then(({ results }) => {
         setMovies(
@@ -42,6 +45,7 @@ export function useSearch(value: string) {
     }, 500);
 
     return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return movies;
