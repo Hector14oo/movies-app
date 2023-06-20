@@ -24,6 +24,8 @@ export function useSearch(value: string) {
   const [movies, setMovies] = useState<MovieType[]>([]);
 
   useEffect(() => {
+    if (!value.length) return;
+    
     const timer = setTimeout(() => {
       fecthApi(searchEndPoint(value)).then(({ results }) => {
         setMovies(
