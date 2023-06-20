@@ -20,6 +20,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.FloatingMenu header button svg{
+  fill: var(--C1);
+}
 .FloatingMenu main h1 {
   margin-bottom: 20px;
   font-size: var(--MIDDLE);
