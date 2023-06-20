@@ -12,7 +12,7 @@ import styles from '@styles/components/Header.module.css';
 
 const routes: Record<string, string> = {
   '/': 'Home',
-  '/search': 'Search',
+  '/search': 'Search Movies',
   '/trending': 'Treding',
   '/favorites': 'Favorites',
   '/profile': 'Profile',
