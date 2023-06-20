@@ -5,26 +5,30 @@ import Link from 'next/link';
 
 import { ButtonFavorite, Rank } from '@components';
 import styles from '@styles/components/Cards.module.css';
+import Image from 'next/image';
 
-export function Poster({
-  id,
-  title,
-  date,
-  votes,
-  cssVar,
-}: {
+interface PosterProps {
   id: number;
   title: string;
   date: string;
-  votes: string;
+  votes: number;
+  overview: string;
+  poster: string;
   cssVar?: object;
-}) {
+}
+
+export function Poster(props: PosterProps) {
+  const { id, title, date, votes, overview, poster, cssVar } = props;
   const [favorite, setFavorite] = useState(false);
+
   return (
     <Link
       href={`/movie-details/${id}`}
       className={styles.Card}
-      style={cssVar}
+      style={{
+        background: `var(--GRADIENT), url(https://image.tmdb.org/t/p/w500${poster}) no-repeat center/cover`,
+        ...cssVar,
+      }}
     >
       <article>
         <header>
