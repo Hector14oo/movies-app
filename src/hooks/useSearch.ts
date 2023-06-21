@@ -1,24 +1,7 @@
+import { useEffect, useState } from 'react';
+import { ResultType, MovieType } from '@interfaces';
 import { searchEndPoint } from '@utils/constants';
 import { fecthApi } from '@utils/fetchApi';
-import { useEffect, useState } from 'react';
-
-interface ResultType {
-  id: string;
-  release_date: string;
-  title: string;
-  overview: string;
-  vote_average: number;
-  poster_path: string;
-}
-
-interface MovieType {
-  id: number;
-  date: string;
-  title: string;
-  overview: string;
-  rank: number;
-  poster: string;
-}
 
 export function useSearch(value: string) {
   const [movies, setMovies] = useState<MovieType[]>([]);
@@ -39,14 +22,16 @@ export function useSearch(value: string) {
         }
 
         setMovies(
-          results.map((movie: ResultType) => ({
-            id: movie.id,
-            date: movie.release_date,
-            title: movie.title,
-            overview: movie.overview,
-            rank: movie.vote_average.toFixed(1),
-            poster: movie.poster_path,
-          }))
+          results.map(
+            (movie: ResultType): MovieType => ({
+              id: movie.id,
+              date: movie.release_date,
+              title: movie.title,
+              overview: movie.overview,
+              votes: Number(movie.vote_average.toFixed(1)),
+              poster: movie.poster_path,
+            })
+          )
         );
       });
     }, 500);

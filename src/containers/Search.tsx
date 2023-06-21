@@ -39,14 +39,14 @@ export function Search() {
           <>
             {movies.length ? (
               <>
-                {movies.map(({ id, date, title, overview, rank, poster }) => (
+                {movies.map(({ id, date, title, overview, votes, poster }) => (
                   <CardPoster
                     key={id}
                     id={id}
                     date={date || 'Unknown date'}
                     title={shorTitle(title)}
                     overview={overview}
-                    votes={rank}
+                    votes={votes}
                     poster={poster}
                   />
                 ))}
