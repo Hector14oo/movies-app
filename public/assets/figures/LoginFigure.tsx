@@ -1,4 +1,4 @@
-export function Login({
+export function LoginFigure({
   width = 200,
   height = 250,
 }: {

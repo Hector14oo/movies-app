@@ -1,4 +1,4 @@
-export function ForgotPassword({
+export function ForgotPasswordFigure({
   width = 200,
   height = 250,
 }: {

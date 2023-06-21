@@ -1,6 +1,6 @@
-export { Empty } from './Empty';
-export { ForgotPassword } from './ForgotPassword';
-export { Login } from './Login';
-export { Register } from './Register';
-export { Search } from './Search';
-export { SettingPassword } from './SettingPassword';
+export { EmptyFigure } from './EmptyFigure';
+export { ForgotPasswordFigure } from './ForgotPasswordFigure';
+export { LoginFigure } from './LoginFigure';
+export { RegisterFigure } from './RegisterFigure';
+export { SearchFigure } from './SearchFigure';
+export { SettingPasswordFigure } from './SettingPasswordFigure';

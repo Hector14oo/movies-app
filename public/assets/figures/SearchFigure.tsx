@@ -1,4 +1,4 @@
-export function Search({
+export function SearchFigure({
   width = 250,
   height = 200,
 }: {

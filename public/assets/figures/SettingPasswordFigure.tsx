@@ -1,4 +1,4 @@
-export function SettingPassword({
+export function SettingPasswordFigure({
   width = 250,
   height = 250,
 }: {
