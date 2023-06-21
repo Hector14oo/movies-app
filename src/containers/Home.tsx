@@ -1,23 +1,24 @@
+import { useTrending } from '@hooks/useTrending';
 import { CardPoster, CardTrailer } from '@components';
+
 import styles from '@styles/containers/Home.module.css';
 
-export function Home() {
+export async function Home() {
+  const trending = await useTrending();
   return (
     <main className={styles.Main}>
       <h1>Trending Movies Of The Week</h1>
       <section>
-        <CardPoster
-          id={1}
-          title='John Wick 4'
-          date='March 22, 2023'
-          votes='7.2'
-        />
-        <CardPoster
-          id={2}
-          title='Spiderman: Across The Spider Verse'
-          date='May 21, 2023'
-          votes='5.0'
-        />
+        {trending.splice(0, 2).map(({ id, title, date, votes, poster }) => (
+          <CardPoster
+            key={id}
+            id={id}
+            title={title}
+            date={date}
+            votes={votes}
+            poster={poster}
+          />
+        ))}
       </section>
       <h2>Lastest Trailers</h2>
       <section>
