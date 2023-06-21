@@ -1,4 +1,4 @@
-import { ResultType, MovieType } from '@interfaces';
+import { ResultType, MovieType, FetchType } from '@interfaces';
 import { trendingEndPoint } from '@utils/constants';
 import { fecthApi } from '@utils/fetchApi';
 
@@ -6,9 +6,7 @@ export async function useTrending() {
   let result, error;
 
   try {
-    const response = await fecthApi<{ results: Array<ResultType> }>(
-      trendingEndPoint
-    );
+    const response = await fecthApi<FetchType>(trendingEndPoint);
     const trending: Array<MovieType> = [];
 
     response.results.map((movie: ResultType) => {
