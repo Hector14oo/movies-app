@@ -2,7 +2,7 @@
 
 import { ButtonLink, CardPoster } from '@components';
 import { useSessionContext } from '@context/SessionContext';
-import { Empty, Login } from 'assets/figures';
+import { EmptyFigure, LoginFigure } from 'assets/figures';
 import styles from '@styles/containers/Favorites.module.css';
 
 export function Favorites() {
@@ -12,7 +12,7 @@ export function Favorites() {
   if (!loged)
     return (
       <main className={styles.Favorites}>
-        <Login />
+        <LoginFigure />
         <h1>Please login to add your favorite movies to this section</h1>
         <ButtonLink
           href={'/account/login'}
@@ -24,7 +24,7 @@ export function Favorites() {
   if (loged && !array.length)
     return (
       <main className={styles.Favorites}>
-        <Empty />
+        <EmptyFigure />
         <h1>This section is empty, go and add some movies!</h1>
       </main>
     );
@@ -37,7 +37,8 @@ export function Favorites() {
           id={i}
           title='Super Mario Bros'
           date='Apr 05, 2023'
-          votes='6.2'
+          votes={6.2}
+          poster={''}
         />
       ))}
     </main>

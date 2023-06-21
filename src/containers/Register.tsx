@@ -1,7 +1,7 @@
 'use client';
 import { MouseEvent, useState } from 'react';
 import { ButtonNormal, InputEmail, InputPassword } from '@components';
-import { Register as RegisterFigure } from 'assets/figures';
+import { RegisterFigure } from 'assets/figures';
 import Link from 'next/link';
 
 import styles from '@styles/containers/Register.module.css';
