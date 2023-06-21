@@ -16,7 +16,7 @@ export function Poster(props: PosterProps) {
     setFavorite(!favorite);
   };
 
-  let img = `https://image.tmdb.org/t/p/w500${poster}`;
+  let img = `https://image.tmdb.org/t/p/original${poster}`;
 
   if (poster === null || poster === undefined)
     img = 'assets/Images/BrokenImage.png';
