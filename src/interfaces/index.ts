@@ -21,6 +21,15 @@ export interface PosterProps extends MovieType {
 }
 
 export interface IconProps {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
+}
+
+export interface ErrorStateType {
+  state: boolean;
+  error: null | {};
+}
+
+export interface FetchType {
+  results: Array<ResultType>;
 }
