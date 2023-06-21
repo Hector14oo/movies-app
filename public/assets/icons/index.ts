@@ -15,8 +15,3 @@ export { PadLockSvg } from './PadLockSvg';
 export { PlaySvg } from './PlaySvg';
 export { StarSvg } from './StarSvg';
 export { CloseSvg } from './CloseSvg';
-
-export interface IconProps {
-  width: number;
-  height: number;
-}
