@@ -3,7 +3,7 @@
 import { useState, ChangeEvent } from 'react';
 import { CardPoster, InputSearcher } from '@components';
 import { useSearch } from '@hooks/useSearch';
-import { Search as SearchFigure } from 'assets/figures';
+import { SearchFigure } from 'assets/figures';
 
 import styles from '@styles/containers/Search.module.css';
 

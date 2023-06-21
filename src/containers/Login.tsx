@@ -1,7 +1,7 @@
 'use client';
 import { MouseEvent, useState } from 'react';
 import { ButtonNormal, InputEmail, InputPassword } from '@components';
-import { Login as LoginFigure } from 'assets/figures';
+import { LoginFigure } from 'assets/figures';
 import Link from 'next/link';
 
 import styles from '@styles/containers/Login.module.css';
