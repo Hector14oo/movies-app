@@ -1,4 +1,4 @@
-export function Register({
+export function RegisterFigure({
   width = 200,
   height = 250,
 }: {

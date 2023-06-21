@@ -1,4 +1,4 @@
-export function Empty({
+export function EmptyFigure({
   width = 200,
   height = 250,
 }: {
