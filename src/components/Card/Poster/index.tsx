@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import Link from 'next/link';
 
 import { PosterProps } from '@interfaces';
@@ -10,6 +10,11 @@ import styles from '@styles/components/Cards.module.css';
 export function Poster(props: PosterProps) {
   const { id, title, date, votes, overview, poster, cssVar } = props;
   const [favorite, setFavorite] = useState(false);
+
+  const handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setFavorite(!favorite);
+  };
 
   let img = `https://image.tmdb.org/t/p/w500${poster}`;
 
@@ -28,8 +33,8 @@ export function Poster(props: PosterProps) {
       <article>
         <header>
           <ButtonFavorite
-            isFav={false}
-            toggleFav={() => setFavorite(!favorite)}
+            isFav={favorite}
+            toggleFav={(e: SyntheticEvent<HTMLButtonElement>) => handleClick(e)}
           />
           <Rank votes={votes} />
         </header>
