@@ -19,3 +19,10 @@ export interface MovieType {
 export interface PosterProps extends MovieType {
   cssVar?: object;
 }
+
+export interface VideoType {
+  id: number;
+  title: string;
+  key: string;
+  type?: string;
+}
