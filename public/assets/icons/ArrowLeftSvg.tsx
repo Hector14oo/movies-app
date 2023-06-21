@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function ArrowLeft({ width, height }: IconProps) {
+export function ArrowLeftSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

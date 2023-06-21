@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function HeartOutLine({ width, height }: IconProps) {
+export function HeartOutLineSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

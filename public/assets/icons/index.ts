@@ -1,20 +1,20 @@
-export { AboutUs } from './AboutUs';
-export { ArrowLeft } from './ArrowLeft';
-export { At } from './At';
-export { BlindEye } from './BlindEye';
-export { Cake } from './Cake';
-export { Eye } from './Eye';
-export { Glass } from './Glass';
-export { HeartFill } from './HeartFill';
-export { HeartOutLine } from './HeartOutLine';
-export { Home } from './Home';
-export { Location } from './Location';
-export { PopCorn } from './PopCorn';
-export { Menu } from './Menu';
-export { PadLock } from './PadLock';
-export { Play } from './Play';
-export { Star } from './Star';
-export { X } from './X';
+export { AboutUsSvg } from './AboutUsSvg';
+export { ArrowLeftSvg } from './ArrowLeftSvg';
+export { AtSvg } from './AtSvg';
+export { BlindEyeSvg } from './BlindEyeSvg';
+export { CakeSvg } from './CakeSvg';
+export { EyeSvg } from './EyeSvg';
+export { GlassSvg } from './GlassSvg';
+export { HeartFillSvg } from './HeartFillSvg';
+export { HeartOutLineSvg } from './HeartOutLineSvg';
+export { HomeSvg } from './HomeSvg';
+export { LocationSvg } from './LocationSvg';
+export { PopCornSvg } from './PopCornSvg';
+export { MenuSvg } from './MenuSvg';
+export { PadLockSvg } from './PadLockSvg';
+export { PlaySvg } from './PlaySvg';
+export { StarSvg } from './StarSvg';
+export { CloseSvg } from './CloseSvg';
 
 export interface IconProps {
   width: number;

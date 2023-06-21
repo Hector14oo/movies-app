@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function Menu({ width, height }: IconProps) {
+export function MenuSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}
