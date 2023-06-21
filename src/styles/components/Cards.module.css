@@ -10,7 +10,7 @@
   overflow: hidden;
   text-decoration: none;
 }
-.Card article{
+.Card article {
   width: 100%;
   height: 100%;
   display: flex;
@@ -40,23 +40,22 @@
 }
 
 .TrailerCard {
-  min-width: 250px;
-  min-height: 150px;
-  padding: 20px;
-  display: grid;
-  place-items: center;
-  grid-template-rows: 1fr auto;
+  height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+  overflow: hidden;
 
   border-radius: var(--BR-3);
-  background: var(--GRADIENT),
-    url('https://assets.adnradio.cl/2023/03/tr%C3%A1iler-final-super-mario-bros-la-pel%C3%ADcula.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   box-shadow: var(--SHADOW);
 }
-.TrailerCard h2 {
+.TrailerCard iframe {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
   color: var(--C1);
   font-size: var(--SMALL);
   font-weight: 700;
@@ -73,7 +72,7 @@
   justify-content: flex-end;
 
   background: var(--GRADIENT),
-  url('https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZPEQXUEQKFELNAMFUTACTVA6NY.jpeg');
+    url('https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZPEQXUEQKFELNAMFUTACTVA6NY.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
