@@ -23,6 +23,11 @@ export interface PosterProps extends MovieType {
 export interface VideoType {
   id: number;
   title: string;
-  key: string;
+  videoKey: string;
+  backdrop_path?: string;
   type?: string;
+}
+
+export interface TrailerType extends VideoType {
+  backdrop?: string;
 }
