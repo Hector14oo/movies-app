@@ -7,8 +7,6 @@ import { useTrailers } from '@hooks/useTrailers';
 export async function Home() {
   const trending = await useTrending();
   const trailers = await useTrailers();
-
-  console.log(trailers);
   return (
     <main className={styles.Main}>
       <h1>Trending Movies Of The Week</h1>
