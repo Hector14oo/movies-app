@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import { HeartFill, HeartOutLine } from 'assets/icons';
+import { HeartFillSvg, HeartOutLineSvg } from 'assets/icons';
 
 import styles from '@styles/components/Buttons.module.css';
 
@@ -15,12 +15,12 @@ export function Favorite({ isFav, toggleFav }: ButtonProps) {
       onClick={toggleFav}
     >
       {isFav ? (
-        <HeartFill
+        <HeartFillSvg
           width={16}
           height={16}
         />
       ) : (
-        <HeartOutLine
+        <HeartOutLineSvg
           width={16}
           height={16}
         />
