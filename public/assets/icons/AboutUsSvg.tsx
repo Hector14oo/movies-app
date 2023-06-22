@@ -1,6 +1,6 @@
 import { IconProps } from ".";
 
-export function AboutUs({
+export function AboutUsSvg({
   width,
   height,
 }: IconProps) {

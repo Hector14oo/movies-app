@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function PadLock({ width, height }: IconProps) {
+export function PadLockSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

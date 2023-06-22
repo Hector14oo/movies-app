@@ -2,7 +2,7 @@
 
 import { MouseEvent } from 'react';
 import { ButtonNormal, InputEmail } from '@components';
-import { ForgotPassword as ForgotPasswordFigure } from 'assets/figures';
+import { ForgotPasswordFigure } from 'assets/figures';
 
 import styles from '@styles/containers/ForgotPassword.module.css';
 

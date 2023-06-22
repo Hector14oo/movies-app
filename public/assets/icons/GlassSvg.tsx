@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function Glass({ width, height }: IconProps) {
+export function GlassSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

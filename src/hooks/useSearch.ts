@@ -1,29 +1,37 @@
 import { useEffect, useState } from 'react';
-import { ResultType, MovieType } from '@interfaces';
+import { ResultType, MovieType, ErrorStateType, FetchType } from '@interfaces';
 import { searchEndPoint } from '@utils/constants';
 import { fecthApi } from '@utils/fetchApi';
 
 export function useSearch(value: string) {
   const [movies, setMovies] = useState<MovieType[]>([]);
-  const [error, setError] = useState(false);
+  const [noResults, setNoResults] = useState(false);
+  const [error, setError] = useState<ErrorStateType>({
+    state: false,
+    error: null,
+  });
   const [prevValue, setPrevValue] = useState('');
 
   useEffect(() => {
-    setError(false);
+    setNoResults(false);
+    setError({ state: false, error: null });
     if (!value.length || value === prevValue) return;
 
     setPrevValue(value);
 
-    const timer = setTimeout(() => {
-      fecthApi(searchEndPoint(value)).then(({ results }) => {
+    const timer = setTimeout(async () => {
+      try {
+        const response = await fecthApi<FetchType>(searchEndPoint(value));
+        const { results } = response;
+
         if (!results.length) {
-          setError(true);
+          setNoResults(true);
           return;
         }
 
         setMovies(
           results.map(
-            (movie: ResultType): MovieType => ({
+            (movie): MovieType => ({
               id: movie.id,
               date: movie.release_date,
               title: movie.title,
@@ -33,12 +41,14 @@ export function useSearch(value: string) {
             })
           )
         );
-      });
+      } catch (error: any) {
+        setError({ state: true, error: error });
+      }
     }, 500);
 
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  return { movies, error };
+  return { movies, noResults, error };
 }

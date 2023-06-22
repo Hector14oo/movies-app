@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function PopCorn({ width, height }: IconProps) {
+export function PopCornSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

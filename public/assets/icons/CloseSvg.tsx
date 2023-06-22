@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function X({ width, height }: IconProps) {
+export function CloseSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

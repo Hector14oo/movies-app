@@ -6,7 +6,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Logo, ButtonClose, ButtonNormal } from '@components';
-import { Home, Glass, Star, HeartFill, AboutUs, ArrowLeft } from 'assets/icons';
+import {
+  HomeSvg,
+  GlassSvg,
+  StarSvg,
+  HeartFillSvg,
+  AboutUsSvg,
+  ArrowLeftSvg,
+} from 'assets/icons';
 
 import styles from '@styles/components/FloatingMenu.module.css';
 
@@ -16,11 +23,11 @@ const Sizes = {
 };
 
 const PATHS = [
-  { route: '/', name: 'Home', icon: <Home {...Sizes} /> },
-  { route: '/search', name: 'Search', icon: <Glass {...Sizes} /> },
-  { route: '/trending', name: 'Trending', icon: <Star {...Sizes} /> },
-  { route: '/favorites', name: 'Favorites', icon: <HeartFill {...Sizes} /> },
-  { route: '/about', name: 'About Us', icon: <AboutUs {...Sizes} /> },
+  { route: '/', name: 'Home', icon: <HomeSvg {...Sizes} /> },
+  { route: '/search', name: 'Search', icon: <GlassSvg {...Sizes} /> },
+  { route: '/trending', name: 'Trending', icon: <StarSvg {...Sizes} /> },
+  { route: '/favorites', name: 'Favorites', icon: <HeartFillSvg {...Sizes} /> },
+  { route: '/about', name: 'About Us', icon: <AboutUsSvg {...Sizes} /> },
 ];
 
 export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
@@ -57,7 +64,7 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
                   {name}
                 </span>
                 {route === pathName && (
-                  <ArrowLeft
+                  <ArrowLeftSvg
                     width={16}
                     height={16}
                   />

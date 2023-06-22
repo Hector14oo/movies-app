@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function Cake({ width, height }: IconProps) {
+export function CakeSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

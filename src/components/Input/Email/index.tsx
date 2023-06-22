@@ -1,4 +1,4 @@
-import { At } from 'assets/icons';
+import { AtSvg } from 'assets/icons';
 import styles from '@styles/components/Inputs.module.css';
 
 export function Email({
@@ -12,7 +12,7 @@ export function Email({
       className={styles.FormInput}
     >
       <i>
-        <At
+        <AtSvg
           width={20}
           height={20}
         />

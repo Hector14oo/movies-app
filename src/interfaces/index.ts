@@ -31,3 +31,17 @@ export interface VideoType {
 export interface TrailerType extends VideoType {
   backdrop?: string;
 }
+
+export interface IconProps {
+  width?: number;
+  height?: number;
+}
+
+export interface ErrorStateType {
+  state: boolean;
+  error: null | {};
+}
+
+export interface FetchType {
+  results: Array<ResultType>;
+}
