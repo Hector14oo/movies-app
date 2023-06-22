@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { TrailerType } from '@interfaces';
-import { PlaySvg } from 'assets/icons';
+import { CloseSvg, PlaySvg } from 'assets/icons';
 
 import styles from '@styles/components/Cards.module.css';
 
@@ -13,12 +13,17 @@ export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
 
   if (backdrop === null || backdrop === undefined)
     img = 'assets/Images/BrokenImage.png';
+
+  const handleClick = (e: SyntheticEvent) => {
+    e.stopPropagation();
+    setIsOpen(false);
+  };
   return (
     <article
       className={styles.TrailerCard}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => setIsOpen(true)}
       style={{
-        background: `var(--GRADIENT), url(${img}) no-repeat top/cover`,
+        background: `var(--GRADIENT), url(${img}) no-repeat center/cover`,
       }}
     >
       <PlaySvg
@@ -28,15 +33,23 @@ export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
       <h2>{title} | Official Trailer</h2>
       {isOpen && (
         <figure className={styles.TrailerModal}>
-          <div>
-            <iframe
-              src={`https://www.youtube.com/embed/${videoKey}?disablekb=1&rel=0&autoplay=1`}
-              title={title}
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowFullScreen
-            />
-          </div>
+          <section>
+            <div onClick={(e: SyntheticEvent) => handleClick(e)}>
+              <CloseSvg
+                width={40}
+                height={40}
+              />
+            </div>
+            <div>
+              <iframe
+                src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&modestbranding=1&fs=1&autohide=1`}
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                title={title}
+                frameBorder='0'
+                allowFullScreen
+              />
+            </div>
+          </section>
         </figure>
       )}
     </article>
