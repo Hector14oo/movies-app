@@ -2,7 +2,7 @@
 
 import { MouseEvent, useState } from 'react';
 import { ButtonNormal, InputPassword } from '@components';
-import { SettingPassword as SettingPasswordFigure } from 'assets/figures';
+import { SettingPasswordFigure } from 'assets/figures';
 import { useRouter } from 'next/navigation';
 
 import styles from '@styles/containers/SettingPasswor.module.css';

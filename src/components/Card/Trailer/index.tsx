@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 'use client';
 
 import { useState } from 'react';
 import { TrailerType } from '@interfaces';
 import { Play } from 'assets/icons';
+=======
+import { PlaySvg } from 'assets/icons';
+>>>>>>> 6b33323a82ffb8c084393b8669367ef943b34879
 
 import styles from '@styles/components/Cards.module.css';
 
@@ -14,6 +18,7 @@ export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
   if (backdrop === null || backdrop === undefined)
     img = 'assets/Images/BrokenImage.png';
   return (
+<<<<<<< HEAD
     <article
       className={styles.TrailerCard}
       onClick={() => setIsOpen(!isOpen)}
@@ -39,6 +44,11 @@ export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
           </div>
         </figure>
       )}
+=======
+    <article className={styles.TrailerCard}>
+      <PlaySvg width={26} height={30}/>
+      <h2>{title} - Official Trailer</h2>
+>>>>>>> 6b33323a82ffb8c084393b8669367ef943b34879
     </article>
   );
 }

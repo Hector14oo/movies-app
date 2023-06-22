@@ -1,10 +1,9 @@
-export function Register({
+import { IconProps } from "@interfaces";
+
+export function RegisterFigure({
   width = 200,
   height = 250,
-}: {
-  width?: number;
-  height?: number;
-}) {
+}: IconProps) {
   return (
     <svg
       width={width}

@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function BlindEye({ width, height }: IconProps) {
+export function BlindEyeSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

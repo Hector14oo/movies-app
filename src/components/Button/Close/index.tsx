@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import { X } from 'assets/icons';
+import { CloseSvg } from 'assets/icons';
 
 import styles from '@styles/components/Buttons.module.css';
 
@@ -13,7 +13,7 @@ export function Close({ onClick }: ButtonProps) {
       className={`${styles.Button} ${styles.MenuButton}`}
       onClick={onClick}
     >
-      <X
+      <CloseSvg
         width={36}
         height={36}
       />

@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function Play({ width, height }: IconProps) {
+export function PlaySvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}
