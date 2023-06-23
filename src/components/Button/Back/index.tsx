@@ -2,7 +2,7 @@
 
 import { MouseEventHandler } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft } from 'assets/icons';
+import { ArrowLeftSvg } from 'assets/icons';
 
 import styles from '@styles/components/Buttons.module.css';
 
@@ -17,7 +17,7 @@ export function Back({ onClick }: ButtonProps) {
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={onClick ?? back}
     >
-      <ArrowLeft
+      <ArrowLeftSvg
         width={16}
         height={18}
       />

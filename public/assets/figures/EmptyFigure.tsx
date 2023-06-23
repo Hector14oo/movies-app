@@ -1,10 +1,9 @@
-export function Empty({
+import { IconProps } from "@interfaces";
+
+export function EmptyFigure({
   width = 200,
   height = 250,
-}: {
-  width?: number;
-  height?: number;
-}) {
+}: IconProps) {
   return (
     <svg
       width={width}

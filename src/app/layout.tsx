@@ -2,7 +2,7 @@ import { Header } from '@components';
 import { SessionProvider } from '@context/SessionContext';
 import '@styles/globals.css';
 
-import { Montserrat as Font } from 'next/font/google';
+import { Roboto as Font } from 'next/font/google';
 
 const inter = Font({ subsets: ['latin'], weight: ['300', '500', '700'] });
 

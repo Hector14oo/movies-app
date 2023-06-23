@@ -6,4 +6,5 @@
   font-weight: 700;
   font-size: var(--SMALLY);
   border-radius: var(--BR-1);
+  text-decoration: none;
 }

@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function At({ width, height }: IconProps) {
+export function AtSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

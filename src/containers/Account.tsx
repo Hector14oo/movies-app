@@ -4,7 +4,7 @@ import { useSessionContext } from '@context/SessionContext';
 import { ButtonLink } from '@components';
 import Image from 'next/image';
 
-import { Cake, Location } from 'assets/icons';
+import { CakeSvg, LocationSvg } from 'assets/icons';
 import styles from '@styles/containers/Account.module.css';
 
 export function Account() {
@@ -37,7 +37,7 @@ export function Account() {
           </section>
           <section>
             <span>
-              <Cake
+              <CakeSvg
                 width={26}
                 height={26}
               />
@@ -49,7 +49,7 @@ export function Account() {
           </section>
           <section>
             <span>
-              <Location
+              <LocationSvg
                 width={26}
                 height={28}
               />
