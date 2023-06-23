@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import { Menu as MenuIcon } from 'assets/icons';
+import { MenuSvg } from 'assets/icons';
 
 import styles from '@styles/components/Buttons.module.css';
 
@@ -13,7 +13,7 @@ export function Menu({ onClick }: ButtonProps) {
       className={`${styles.Button} ${styles.SpecialButton}`}
       onClick={onClick}
     >
-      <MenuIcon
+      <MenuSvg
         width={16}
         height={16}
       />

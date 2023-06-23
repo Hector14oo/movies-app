@@ -1,4 +1,4 @@
-import { PadLock, BlindEye, Eye } from 'assets/icons';
+import { PadLockSvg, BlindEyeSvg, EyeSvg } from 'assets/icons';
 import styles from '@styles/components/Inputs.module.css';
 
 export function Password({
@@ -20,14 +20,14 @@ export function Password({
       className={styles.FormInput}
     >
       <i>
-        <PadLock />
+        <PadLockSvg />
       </i>
       <input
         type={isBlind ? 'text' : 'password'}
         id={placeholder}
         placeholder={placeholder}
       />
-      <i onClick={toggleBlind}>{isBlind ? <BlindEye /> : <Eye />}</i>
+      <i onClick={toggleBlind}>{isBlind ? <BlindEyeSvg /> : <EyeSvg />}</i>
     </label>
   );
 }

@@ -1,6 +1,6 @@
 import { IconProps } from '.';
 
-export function Eye({ width, height }: IconProps) {
+export function EyeSvg({ width, height }: IconProps) {
   return (
     <svg
       width={width}

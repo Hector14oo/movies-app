@@ -1,10 +1,9 @@
-export function Search({
+import { IconProps } from "@interfaces";
+
+export function SearchFigure({
   width = 250,
   height = 200,
-}: {
-  width?: number;
-  height?: number;
-}) {
+}: IconProps) {
   return (
     <svg
       width={width}
