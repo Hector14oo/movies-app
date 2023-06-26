@@ -1,3 +1,5 @@
+import { SyntheticEvent } from 'react';
+
 export interface ResultType {
   id: number;
   release_date: string;
@@ -32,4 +34,9 @@ export interface ErrorStateType {
 
 export interface FetchType {
   results: Array<ResultType>;
+}
+
+export interface sliderClickTypes {
+  e: SyntheticEvent;
+  type: 'PREV' | 'NEXT';
 }
