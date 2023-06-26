@@ -1,26 +1,39 @@
-import { VideoType } from '@interfaces';
+import {
+  FetchTrailersType,
+  FetchType,
+  VideoResultType,
+} from '@interfaces';
 import { fecthApi } from '@utils/fetchApi';
 import { upComingEndPoint, videosEndPoint } from '@utils/constants';
 
 export async function useTrailers() {
-  const { results } = await fecthApi(upComingEndPoint);
-  const trailers: Array<VideoType> = await Promise.all(
-    results.map(async (video: VideoType) => {
-      const response = await fecthApi(videosEndPoint(video.id));
-      const trailer = response.results.find(
-        (video: VideoType) => video.type === 'Trailer'
-      );
+  let result, error;
 
-      if (trailer === undefined) return;
+  try {
+    const response = await fecthApi<FetchType>(upComingEndPoint);
 
-      return {
-        id: video.id,
-        videoKey: trailer.key,
-        title: video.title,
-        backdrop_path: video.backdrop_path,
-      };
-    })
-  );
+    const trailers = await Promise.all(
+      response.results.map(async (video) => {
+        const res = await fecthApi<FetchTrailersType>(videosEndPoint(video.id));
 
-  return trailers;
+        const trailer = res.results.find(
+          (video: VideoResultType) => video.type === 'Trailer'
+        );
+
+        if (trailer === undefined) return;
+
+        return {
+          title: video.title,
+          videoKey: trailer.key,
+          backdrop_path: video.backdrop_path,
+        };
+      })
+    );
+
+    result = trailers;
+  } catch (err) {
+    error = err;
+  }
+
+  return { result, error };
 }
