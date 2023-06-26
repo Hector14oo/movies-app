@@ -1,6 +1,7 @@
 import {
   FetchTrailersType,
   FetchType,
+  TrailerType,
   VideoResultType,
 } from '@interfaces';
 import { fecthApi } from '@utils/fetchApi';
@@ -12,7 +13,7 @@ export async function useTrailers() {
   try {
     const response = await fecthApi<FetchType>(upComingEndPoint);
 
-    const trailers = await Promise.all(
+    const trailers: Array<TrailerType> = await Promise.all(
       response.results.map(async (video) => {
         const res = await fecthApi<FetchTrailersType>(videosEndPoint(video.id));
 
@@ -20,12 +21,11 @@ export async function useTrailers() {
           (video: VideoResultType) => video.type === 'Trailer'
         );
 
-        if (trailer === undefined) return;
-
         return {
+          id: video.id,
           title: video.title,
-          videoKey: trailer.key,
-          backdrop_path: video.backdrop_path,
+          videoKey: trailer?.key,
+          backdrop: video.backdrop_path,
         };
       })
     );
