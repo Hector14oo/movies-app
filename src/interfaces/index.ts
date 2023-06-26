@@ -5,6 +5,23 @@ export interface ResultType {
   overview?: string;
   vote_average: number;
   poster_path: string;
+  backdrop_path?: string;
+}
+
+export interface VideoResultType {
+  id: number;
+  title: string;
+  key: string;
+  backdrop_path?: string;
+  type?: string;
+}
+
+export interface FetchType {
+  results: Array<ResultType>;
+}
+
+export interface FetchTrailersType {
+  results: Array<VideoResultType>;
 }
 
 export interface MovieType {
@@ -20,15 +37,8 @@ export interface PosterProps extends MovieType {
   cssVar?: object;
 }
 
-export interface VideoType {
-  id: number;
-  title: string;
-  videoKey: string;
-  backdrop_path?: string;
-  type?: string;
-}
-
-export interface TrailerType extends VideoType {
+export interface TrailerType extends VideoResultType {
+  videoKey?: string;
   backdrop?: string;
 }
 
@@ -40,8 +50,4 @@ export interface IconProps {
 export interface ErrorStateType {
   state: boolean;
   error: null | {};
-}
-
-export interface FetchType {
-  results: Array<ResultType>;
 }
