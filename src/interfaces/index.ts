@@ -11,9 +11,14 @@ export interface ResultType {
 export interface VideoResultType {
   id: number;
   title: string;
-  key: string;
+  key?: string;
   backdrop_path?: string;
   type?: string;
+}
+
+export interface TrailerType extends VideoResultType {
+  videoKey?: string;
+  backdrop?: string;
 }
 
 export interface FetchType {
@@ -35,11 +40,6 @@ export interface MovieType {
 
 export interface PosterProps extends MovieType {
   cssVar?: object;
-}
-
-export interface TrailerType extends VideoResultType {
-  videoKey?: string;
-  backdrop?: string;
 }
 
 export interface IconProps {
