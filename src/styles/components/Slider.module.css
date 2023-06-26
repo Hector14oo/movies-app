@@ -1,0 +1,74 @@
+.Buttons {
+  width: 100%;
+  height: fit-content;
+  margin: auto 0;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.Buttons button svg {
+  transition: all 0.5s var(--TRANSITION-2);
+}
+.Buttons button {
+  transition: all 0.5s var(--TRANSITION-2);
+}
+.Buttons button:first-child {
+  transform: scale(1.75, 2);
+}
+.Buttons button:first-child[disabled] {
+  transform: scale(1.5, 1.75);
+  filter: grayscale(80%);
+}
+.Buttons button:first-child[disabled] svg {
+  transform: translateX(-20%);
+}
+.Buttons button:last-child {
+  transform: scale(1.75, 2) rotateY(180deg);
+}
+.Buttons button:last-child[disabled] {
+  transform: scale(1.5, 1.75) rotateY(180deg);
+  filter: grayscale(80%);
+}
+.Buttons button:last-child[disabled] svg {
+  transform: translateX(-20%);
+}
+.Slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.Slider a {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  margin: auto 0;
+  top: 0;
+  bottom: 0;
+
+  transition: all 0.75s var(--TRANSITION-2);
+  transform: translateX(calc(-637.5px + (var(--id) * 327px)));
+}
+.Slider a header {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 1s var(--TRANSITION-1);
+}
+.Slider a footer h2,
+.Slider a footer p {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s var(--TRANSITION-1);
+}
+.Slider a:nth-child(3) {
+  filter: blur(0);
+  height: 100%;
+}
+.Slider a:nth-child(3) header,
+.Slider a:nth-child(3) footer h2,
+.Slider a:nth-child(3) footer p {
+  opacity: 1;
+  transform: translateY(0);
+}
