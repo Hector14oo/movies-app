@@ -7,7 +7,7 @@ export async function Trending() {
   const { result, error } = await useTrending();
   return (
     <main className={styles.Trending}>
-      {false ? (
+      {error ? (
         <main className={styles.MainError}>
           <ErrorFigure
             width={300}
