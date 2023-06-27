@@ -9,21 +9,24 @@ import styles from '@styles/components/Cards.module.css';
 export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
   const [isOpen, setIsOpen] = useState(false);
 
-  let img = `https://image.tmdb.org/t/p/original${backdrop}`;
-
-  if (backdrop === null || backdrop === undefined)
-    img = 'assets/Images/BrokenImage.png';
+  let imgCover = backdrop
+    ? `https://image.tmdb.org/t/p/original${backdrop}`
+    : 'assets/Images/BrokenImage.png';
 
   const handleClick = (e: SyntheticEvent) => {
     e.stopPropagation();
     setIsOpen(false);
   };
+
+  const srcBuilder = (key: string) =>
+    `https://www.youtube.com/embed/${key}?autoplay=1&modestbranding=1&fs=1&autohide=1`;
+
   return (
     <article
       className={styles.TrailerCard}
       onClick={() => setIsOpen(true)}
       style={{
-        background: `var(--GRADIENT), url(${img}) no-repeat center/cover`,
+        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
       }}
     >
       <PlaySvg
@@ -42,7 +45,7 @@ export function Trailer({ id, videoKey, title, backdrop }: TrailerType) {
             </div>
             <div>
               <iframe
-                src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&modestbranding=1&fs=1&autohide=1`}
+                src={srcBuilder(videoKey)}
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 title={title}
                 frameBorder='0'

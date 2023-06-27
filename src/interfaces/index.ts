@@ -17,8 +17,8 @@ export interface VideoResultType {
 }
 
 export interface TrailerType extends VideoResultType {
-  videoKey?: string;
-  backdrop?: string;
+  videoKey: string;
+  backdrop: string;
 }
 
 export interface FetchType {

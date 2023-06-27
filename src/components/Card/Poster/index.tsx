@@ -16,17 +16,16 @@ export function Poster(props: PosterProps) {
     setFavorite(!favorite);
   };
 
-  let img = `https://image.tmdb.org/t/p/original${poster}`;
-
-  if (poster === null || poster === undefined)
-    img = 'assets/Images/BrokenImage.png';
+  let imgCover = poster
+    ? `https://image.tmdb.org/t/p/original${poster}`
+    : 'assets/Images/BrokenImage.png';
 
   return (
     <Link
       href={`/movie-details/${id}`}
       className={styles.Card}
       style={{
-        background: `var(--GRADIENT), url(${img}) no-repeat center/cover`,
+        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
         ...cssVar,
       }}
     >
