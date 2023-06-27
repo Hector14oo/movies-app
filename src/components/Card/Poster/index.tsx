@@ -8,7 +8,7 @@ import { ButtonFavorite, Rank } from '@components';
 import styles from '@styles/components/Cards.module.css';
 
 export function Poster(props: PosterProps) {
-  const { id, title, date, votes, overview, poster, cssVar } = props;
+  const { id, title, date, votes, overview, poster, className } = props;
   const [favorite, setFavorite] = useState(false);
 
   const handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
@@ -16,18 +16,16 @@ export function Poster(props: PosterProps) {
     setFavorite(!favorite);
   };
 
-  let img = `https://image.tmdb.org/t/p/original${poster}`;
-
-  if (poster === null || poster === undefined)
-    img = 'assets/Images/BrokenImage.png';
+  let imgCover = poster
+    ? `https://image.tmdb.org/t/p/original${poster}`
+    : 'assets/Images/BrokenImage.png';
 
   return (
     <Link
       href={`/movie-details/${id}`}
-      className={styles.Card}
+      className={`${styles.Card} ${className}`}
       style={{
-        background: `var(--GRADIENT), url(${img}) no-repeat center/cover`,
-        ...cssVar,
+        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
       }}
     >
       <article>
