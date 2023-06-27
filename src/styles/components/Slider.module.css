@@ -4,7 +4,7 @@
   margin: auto 0;
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   z-index: 1;
@@ -35,21 +35,21 @@
 .Buttons button:last-child[disabled] svg {
   transform: translateX(-20%);
 }
+
 .Slider {
-  width: 100%;
   height: 100%;
-  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+
+  transform: translateX(calc(-100vw + 20px));
 }
 .Slider a {
-  width: 90%;
+  width: calc(100vw - 40px);
   height: 90%;
-  position: absolute;
-  margin: auto 0;
-  top: 0;
-  bottom: 0;
 
-  transition: all 0.75s var(--TRANSITION-2);
-  transform: translateX(calc(-637.5px + (var(--id) * 327px)));
+  transition: all .75s var(--TRANSITION-1);
 }
 .Slider a header {
   opacity: 0;
@@ -62,13 +62,12 @@
   transform: translateY(100%);
   transition: all 1s var(--TRANSITION-1);
 }
-.Slider a:nth-child(3) {
-  filter: blur(0);
+.Slider .onView {
   height: 100%;
 }
-.Slider a:nth-child(3) header,
-.Slider a:nth-child(3) footer h2,
-.Slider a:nth-child(3) footer p {
+.Slider .onView header,
+.Slider .onView footer h2,
+.Slider .onView footer p {
   opacity: 1;
   transform: translateY(0);
 }
