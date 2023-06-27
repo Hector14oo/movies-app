@@ -5,16 +5,19 @@
   text-align: center;
   gap: 40px;
 }
-.About figure {
+.About section figure {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.About figure > svg {
+.About section figure > svg {
   width: 84px;
   height: 84px;
 
   fill: var(--C2);
+}
+.About section p{
+  font-weight: 500;
 }
 .About section{
   width: 100%;

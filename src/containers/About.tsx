@@ -1,5 +1,4 @@
-'use client';
-
+import Link from 'next/link';
 import {
   AboutUsSvg,
   GitHubSvg,
@@ -9,7 +8,6 @@ import {
 } from 'assets/icons';
 
 import styles from '@styles/containers/About.module.css';
-import Link from 'next/link';
 
 export function About() {
   return (
