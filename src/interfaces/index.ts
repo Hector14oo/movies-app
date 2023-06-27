@@ -19,7 +19,7 @@ export interface MovieType {
 }
 
 export interface PosterProps extends MovieType {
-  cssVar?: object;
+  className?: string;
 }
 
 export interface IconProps {
