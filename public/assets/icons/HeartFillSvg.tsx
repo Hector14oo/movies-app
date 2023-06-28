@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from '@interfaces';
 
 export function HeartFillSvg({ width, height }: IconProps) {
   return (
