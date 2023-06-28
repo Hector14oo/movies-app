@@ -16,7 +16,7 @@ export function MovieDetails({ id }: { id: number }) {
         />
       </header>
       <main>
-        <Rank votes='7.2' />
+        <Rank votes={7.2} />
         <h1>John Wick 4</h1>
         <p>action, suspense, crime</p>
         <p>2h 25min</p>
