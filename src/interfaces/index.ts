@@ -7,6 +7,28 @@ export interface ResultType {
   overview?: string;
   vote_average: number;
   poster_path: string;
+  backdrop_path?: string;
+}
+
+export interface VideoResultType {
+  id: number;
+  title: string;
+  key?: string;
+  backdrop_path?: string;
+  type?: string;
+}
+
+export interface TrailerType extends VideoResultType {
+  videoKey: string;
+  backdrop: string;
+}
+
+export interface FetchType {
+  results: Array<ResultType>;
+}
+
+export interface FetchTrailersType {
+  results: Array<VideoResultType>;
 }
 
 export interface MovieType {
@@ -32,11 +54,8 @@ export interface ErrorStateType {
   error: null | {};
 }
 
-export interface FetchType {
-  results: Array<ResultType>;
-}
-
 export interface sliderClickTypes {
   e: SyntheticEvent;
   type: 'PREV' | 'NEXT';
 }
+

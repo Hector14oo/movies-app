@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ResultType, MovieType, ErrorStateType, FetchType } from '@interfaces';
+import { MovieType, ErrorStateType, FetchType } from '@interfaces';
 import { searchEndPoint } from '@utils/constants';
 import { fecthApi } from '@utils/fetchApi';
 

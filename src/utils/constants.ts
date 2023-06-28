@@ -10,4 +10,10 @@ export const options = {
 export const searchEndPoint = (value: string) =>
   `https://api.themoviedb.org/3/search/movie?query=${value}&page=1`;
 
-export const trendingEndPoint = `https://api.themoviedb.org/3/trending/movie/week`;
+export const trendingEndPoint =
+  'https://api.themoviedb.org/3/trending/movie/week';
+
+export const upComingEndPoint = 'https://api.themoviedb.org/3/movie/upcoming';
+
+export const videosEndPoint = (id: number) =>
+  `https://api.themoviedb.org/3/movie/${id}/videos`;

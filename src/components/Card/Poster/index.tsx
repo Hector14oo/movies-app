@@ -24,9 +24,7 @@ export function Poster(props: PosterProps) {
     <Link
       href={`/movie-details/${id}`}
       className={`${styles.Card} ${className}`}
-      style={{
-        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
-      }}
+      style={{background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`}}
     >
       <article>
         <header>
