@@ -24,8 +24,8 @@ export async function useTrailers() {
         return {
           id: video.id,
           title: video.title,
-          videoKey: trailer?.key,
-          backdrop: video.backdrop_path,
+          videoKey: trailer?.key || '',
+          backdrop: video.backdrop_path || '',
         };
       })
     );
