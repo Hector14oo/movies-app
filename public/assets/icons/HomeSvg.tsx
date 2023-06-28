@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from '@interfaces';
 
 export function HomeSvg({ width, height }: IconProps) {
   return (
