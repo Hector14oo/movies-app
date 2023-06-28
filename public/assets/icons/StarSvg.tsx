@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from '@interfaces';
 
 export function StarSvg({ width, height }: IconProps) {
   return (

@@ -1,5 +1,5 @@
-import { SettingPasswor } from '@containers';
+import { SettingPassword } from '@containers';
 
 export default function SettingPasswordPage() {
-  return <SettingPasswor />;
+  return <SettingPassword />;
 }

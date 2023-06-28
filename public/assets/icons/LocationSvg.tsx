@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from '@interfaces';
 
 export function LocationSvg({ width, height }: IconProps) {
   return (
