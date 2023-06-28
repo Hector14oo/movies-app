@@ -35,21 +35,18 @@
 .Buttons button:last-child[disabled] svg {
   transform: translateX(-20%);
 }
-
 .Slider {
   height: 100%;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 20px;
-
   transform: translateX(calc(-100vw + 20px));
 }
 .Slider a {
   width: calc(100vw - 40px);
-  height: 90%;
-
-  transition: all .75s var(--TRANSITION-1);
+  height: 100%;
+  transition: all 0.75s var(--TRANSITION-1);
 }
 .Slider a header {
   opacity: 0;
@@ -61,9 +58,6 @@
   opacity: 0;
   transform: translateY(100%);
   transition: all 1s var(--TRANSITION-1);
-}
-.Slider .onView {
-  height: 100%;
 }
 .Slider .onView header,
 .Slider .onView footer h2,
