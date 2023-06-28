@@ -8,7 +8,7 @@ import { ButtonFavorite, Rank } from '@components';
 import styles from '@styles/components/Cards.module.css';
 
 export function Poster(props: PosterProps) {
-  const { id, title, date, votes, overview, poster, cssVar } = props;
+  const { id, title, date, votes, overview, poster, className } = props;
   const [favorite, setFavorite] = useState(false);
 
   const handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
@@ -23,11 +23,8 @@ export function Poster(props: PosterProps) {
   return (
     <Link
       href={`/movie-details/${id}`}
-      className={styles.Card}
-      style={{
-        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
-        ...cssVar,
-      }}
+      className={`${styles.Card} ${className}`}
+      style={{background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`}}
     >
       <article>
         <header>

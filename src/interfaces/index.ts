@@ -1,3 +1,5 @@
+import { SyntheticEvent } from 'react';
+
 export interface ResultType {
   id: number;
   release_date: string;
@@ -39,7 +41,7 @@ export interface MovieType {
 }
 
 export interface PosterProps extends MovieType {
-  cssVar?: object;
+  className?: string;
 }
 
 export interface IconProps {
@@ -51,3 +53,9 @@ export interface ErrorStateType {
   state: boolean;
   error: null | {};
 }
+
+export interface sliderClickTypes {
+  e: SyntheticEvent;
+  type: 'PREV' | 'NEXT';
+}
+

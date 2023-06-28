@@ -24,3 +24,4 @@ export {
 
 export { Logo } from './Logo';
 export { Rank } from './Rank';
+export { Slider } from './Slider';
