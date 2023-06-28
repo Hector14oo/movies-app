@@ -1,0 +1,57 @@
+.About {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+}
+.About section figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.About section figure > svg {
+  width: 84px;
+  height: 84px;
+
+  fill: var(--C2);
+}
+.About section p{
+  font-weight: 500;
+}
+.About section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.About section:nth-child(1){
+  flex-direction: column;
+}
+.About section nav h2{
+  margin-bottom: 8px;
+} 
+.About section nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.About section ul li {
+  width: var(--LARGE);
+  height: var(--LARGE);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.About section nav ul li a{
+  width: 100%;
+  height: 100%;
+}
+.About section nav ul li a svg{
+  fill: var(--C2);
+}
+.About section nav:nth-child(2) ul li:nth-child(1) a svg{
+  fill: var(--C1);
+  stroke: var(--C2);
+}
