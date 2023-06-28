@@ -1,10 +1,5 @@
 import Link from 'next/link';
-import {
-  GitHubSvg,
-  LinkedinSvg,
-  NextJsSvg,
-  ReactSvg,
-} from 'assets/icons';
+import { GitHubSvg, LinkedinSvg, NextJsSvg, ReactSvg } from 'assets/icons';
 
 import { TMDBLogo } from 'assets/figures';
 
@@ -15,7 +10,10 @@ export function About() {
     <main className={styles.About}>
       <section>
         <figure>
-          <Link href={'https://developer.themoviedb.org/docs'}>
+          <Link
+            href={'https://developer.themoviedb.org/docs'}
+            target='blank'
+          >
             <TMDBLogo />
           </Link>
         </figure>
