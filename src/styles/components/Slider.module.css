@@ -51,13 +51,19 @@
 .Slider a header {
   opacity: 0;
   transform: translateY(-100%);
-  transition: all 1s var(--TRANSITION-1);
+  transition-property: opacity, transform;
+  transition-duration: 0.75s;
+  transition-delay: 0.25s;
+  transition-timing-function: var(--TRANSITION-1);
 }
 .Slider a footer h2,
 .Slider a footer p {
   opacity: 0;
   transform: translateY(100%);
-  transition: all 1s var(--TRANSITION-1);
+  transition-property: opacity, transform;
+  transition-duration: 0.75s;
+  transition-delay: 0.25s;
+  transition-timing-function: var(--TRANSITION-1);
 }
 .Slider .onView header,
 .Slider .onView footer h2,
