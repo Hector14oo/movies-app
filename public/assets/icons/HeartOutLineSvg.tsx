@@ -1,4 +1,4 @@
-import { IconProps } from '.';
+import { IconProps } from '@interfaces';
 
 export function HeartOutLineSvg({ width, height }: IconProps) {
   return (
