@@ -8,16 +8,29 @@ import {
 } from 'assets/icons';
 
 import styles from '@styles/containers/About.module.css';
+import { TMDBLogo } from 'assets/figures/TMDBLogo';
 
 export function About() {
   return (
     <main className={styles.About}>
       <section>
         <figure>
-          <AboutUsSvg />
+          <TMDBLogo />
         </figure>
         <p>
-          This application was developed by Hector Davila, with the main
+          Our application utilizes The Movie Database API, granting us access to
+          a vast collection of movie data. This API is instrumental in enhancing
+          the functionality of our application and enables us to provide a
+          comprehensive cinematic experience to our users. With this
+          integration, we can provide movie details, information on cast and
+          crew, ratings, and more. The Movie Database API keeps us updated on
+          the latest releases and trends in the world of cinema.
+        </p>
+      </section>
+
+      <section>
+        <p>
+          The application was developed by Hector Davila, with the main
           objective of improving skills in new tools, styles and programming
           logic.
         </p>
