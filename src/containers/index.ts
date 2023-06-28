@@ -8,3 +8,4 @@ export { Register } from './Register';
 export { ForgotPassword } from './ForgotPassword';
 export { SettingPassword } from './SettingPassword';
 export { MovieDetails } from './MovieDetails';
+export { About } from './About';
