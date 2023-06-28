@@ -1,21 +1,23 @@
 import Link from 'next/link';
 import {
-  AboutUsSvg,
   GitHubSvg,
   LinkedinSvg,
   NextJsSvg,
   ReactSvg,
 } from 'assets/icons';
 
+import { TMDBLogo } from 'assets/figures';
+
 import styles from '@styles/containers/About.module.css';
-import { TMDBLogo } from 'assets/figures/TMDBLogo';
 
 export function About() {
   return (
     <main className={styles.About}>
       <section>
         <figure>
-          <TMDBLogo />
+          <Link href={'https://developer.themoviedb.org/docs'}>
+            <TMDBLogo />
+          </Link>
         </figure>
         <p>
           Our application utilizes The Movie Database API, granting us access to
