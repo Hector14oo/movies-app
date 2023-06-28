@@ -1,54 +1,64 @@
+import { useDetails } from '@hooks/useDetails';
 import { CardArtist, Rank } from '@components';
-import Image from 'next/image';
+import { ErrorFigure } from 'assets/figures';
 
 import styles from '@styles/containers/MovieDetails.module.css';
 
-export function MovieDetails({ id }: { id: number }) {
+export async function MovieDetails({ movieId }: { movieId: number }) {
+  const { result, error } = await useDetails(movieId);
+
+  let backdropCover = result?.movieDetails.backdrop_path
+    ? `https://image.tmdb.org/t/p/original${result.movieDetails.backdrop_path}`
+    : '/assets/Images/BrokenImage.png';
+
+  const formatHour = (duration: number) =>
+    `${Math.floor(duration / 60)}h ${duration % 60}min`;
+
   return (
-    <main className={styles.MovieDetails}>
-      <header>
-        <Image
-          src={
-            'https://media.revistagq.com/photos/6422ba5a62f41558efce8cab/3:2/w_2736,h_1824,c_limit/MCDJOWI_LG042.jpeg'
-          }
-          fill
-          alt='John Wick 4 image escene'
-        />
-      </header>
-      <main>
-        <Rank votes={7.2} />
-        <h1>John Wick 4</h1>
-        <p>action, suspense, crime</p>
-        <p>2h 25min</p>
+    <>
+      {error ? (
+        <main className={styles.MainError}>
+          <ErrorFigure
+            width={300}
+            height={250}
+          />
+          <h1>{"We're sorry, an error has occurred :("}</h1>
+          <p>{error?.toString()}, try again</p>
+        </main>
+      ) : (
+        <main className={styles.MovieDetails}>
+          <header
+            style={{
+              background: `var(--GRADIENT), url(${backdropCover}) no-repeat center/cover`,
+            }}
+          />
+          <main>
+            <Rank
+              votes={Number(result?.movieDetails?.vote_average?.toFixed(2))}
+            />
+            <h1>{result?.movieDetails.title}</h1>
+            <p>
+              {result?.movieDetails?.genres?.map((genre) => `${genre.name} `)}
+            </p>
+            <p>{formatHour(result?.movieDetails.runtime || 0)}</p>
 
-        <p>
-          With the price on his head ever increasing, John Wick uncovers a path
-          to defeating The High Table. But before he can earn his freedom, Wick
-          must face off against a new enemy with powerful alliances across the
-          globe and forces that turn old friends into foes.
-        </p>
+            <p>{result?.movieDetails.overview}</p>
 
-        <h2>Cast</h2>
+            <h2>Cast</h2>
 
-        <section>
-          <CardArtist
-            name='Keanu Reeves'
-            character='John Wick'
-          />
-          <CardArtist
-            name='Keanu Reeves'
-            character='John Wick'
-          />
-          <CardArtist
-            name='Keanu Reeves'
-            character='John Wick'
-          />
-          <CardArtist
-            name='Keanu Reeves'
-            character='John Wick'
-          />
-        </section>
-      </main>
-    </main>
+            <section>
+              {result?.cast.map((artist) => (
+                <CardArtist
+                  key={artist.id}
+                  name={artist.name}
+                  character={artist.character}
+                  picture={artist.picture}
+                />
+              ))}
+            </section>
+          </main>
+        </main>
+      )}
+    </>
   );
 }
