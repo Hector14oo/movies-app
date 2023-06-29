@@ -21,6 +21,7 @@ export function Email({
         type='email'
         id={placeholder}
         placeholder={placeholder}
+        required
       />
     </label>
   );
