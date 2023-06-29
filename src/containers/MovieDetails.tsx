@@ -34,7 +34,7 @@ export async function MovieDetails({ movieId }: { movieId: number }) {
           />
           <main>
             <Rank
-              votes={Number(result?.movieDetails?.vote_average?.toFixed(2))}
+              votes={Number(result?.movieDetails?.vote_average?.toFixed(1))}
             />
             <h1>{result?.movieDetails.title}</h1>
             <p>
