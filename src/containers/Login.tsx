@@ -1,26 +1,48 @@
 'use client';
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from 'firebase/auth';
+import { auth } from '@firebase/client';
+
 import { MouseEvent, useState } from 'react';
 import { ButtonNormal, InputEmail, InputPassword } from '@components';
 import { LoginFigure } from 'assets/figures';
-import Link from 'next/link';
 
 import styles from '@styles/containers/Login.module.css';
+import { useAuth } from '@hooks/useAuth';
 
 export function Login() {
+  const { userData } = useAuth();
   const [isBlind, setIsBlind] = useState(false);
+
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    singInWithGoogle();
+
+    async function singInWithGoogle() {
+      const googleProvider = new GoogleAuthProvider();
+
+      try {
+        await signInWithPopup(auth, googleProvider);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   const toggleBlind = () => {
     setIsBlind(!isBlind);
   };
-
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    alert('Login');
-  };
   return (
     <main className={styles.Login}>
       <LoginFigure />
-      <form action=''>
+      <form>
         <h1>Login</h1>
         <InputEmail placeholder='Email' />
         <InputPassword
@@ -36,6 +58,10 @@ export function Login() {
         <span>
           New here? <Link href={'/account/register'}>Register</Link>
         </span>
+        <ButtonNormal
+          text='Login With Google'
+          onClick={handleClick}
+        />
       </form>
     </main>
   );
