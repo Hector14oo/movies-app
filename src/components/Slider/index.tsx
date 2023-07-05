@@ -17,9 +17,9 @@ export function Slider({ array }: { array: Array<MovieType> | [] }) {
     targetNode1.classList.remove(`${styles.onView}`);
     targetNode2.classList.add(`${styles.onView}`);
     targetNode3.classList.remove(`${styles.onView}`);
-    targetNode1.style.height = '90%';
-    targetNode2.style.height = '100%';
-    targetNode3.style.height = '90%';
+    targetNode1.style.transform = 'scale(.85)';
+    targetNode2.style.transform = 'scale(1)';
+    targetNode3.style.transform = 'scale(.85)';
   };
 
   const handleClick = ({ e, type }: sliderClickTypes) => {

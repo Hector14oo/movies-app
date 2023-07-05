@@ -35,35 +35,35 @@
 .Buttons button:last-child[disabled] svg {
   transform: translateX(-20%);
 }
-
 .Slider {
   height: 100%;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 20px;
-
   transform: translateX(calc(-100vw + 20px));
 }
 .Slider a {
   width: calc(100vw - 40px);
-  height: 90%;
-
-  transition: all .75s var(--TRANSITION-1);
+  height: 100%;
+  transition: all 0.75s var(--TRANSITION-1);
 }
 .Slider a header {
   opacity: 0;
   transform: translateY(-100%);
-  transition: all 1s var(--TRANSITION-1);
+  transition-property: opacity, transform;
+  transition-duration: 0.75s;
+  transition-delay: 0.25s;
+  transition-timing-function: var(--TRANSITION-1);
 }
 .Slider a footer h2,
 .Slider a footer p {
   opacity: 0;
   transform: translateY(100%);
-  transition: all 1s var(--TRANSITION-1);
-}
-.Slider .onView {
-  height: 100%;
+  transition-property: opacity, transform;
+  transition-duration: 0.75s;
+  transition-delay: 0.25s;
+  transition-timing-function: var(--TRANSITION-1);
 }
 .Slider .onView header,
 .Slider .onView footer h2,
