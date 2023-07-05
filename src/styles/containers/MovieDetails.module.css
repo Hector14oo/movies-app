@@ -28,6 +28,7 @@
 }
 .MovieDetails > main > h1,
 .MovieDetails > main > h2 {
+  width: calc(100% - 40px);
   font-size: var(--MIDDLE);
   margin-bottom: 6px;
 }
