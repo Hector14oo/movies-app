@@ -59,3 +59,10 @@ export interface sliderClickTypes {
   type: 'PREV' | 'NEXT';
 }
 
+export interface userType {
+  displaName: string | null;
+  email: string | null;
+  profilePicture: string | null;
+  uid: string;
+  favorites: Array<MovieType>;
+}
