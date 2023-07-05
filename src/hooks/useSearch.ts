@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MovieType, ErrorStateType, FetchType } from '@interfaces';
-import { searchEndPoint } from '@utils/constants';
+import { SEARCH_ENDPOINT } from '@utils/constants';
 import { fecthApi } from '@utils/fetchApi';
 
 export function useSearch(value: string) {
@@ -21,7 +21,7 @@ export function useSearch(value: string) {
 
     const timer = setTimeout(async () => {
       try {
-        const response = await fecthApi<FetchType>(searchEndPoint(value));
+        const response = await fecthApi<FetchType>(SEARCH_ENDPOINT(value));
         const { results } = response;
 
         if (!results.length) {

@@ -5,17 +5,19 @@ import {
   VideoResultType,
 } from '@interfaces';
 import { fecthApi } from '@utils/fetchApi';
-import { upComingEndPoint, videosEndPoint } from '@utils/constants';
+import { UP_COMING_ENDPOINT, VIDEOS_ENDPOINT } from '@utils/constants';
 
 export async function useTrailers() {
   let result, error;
 
   try {
-    const response = await fecthApi<FetchType>(upComingEndPoint);
+    const response = await fecthApi<FetchType>(UP_COMING_ENDPOINT);
 
     const trailers: Array<TrailerType> = await Promise.all(
       response.results.map(async (video) => {
-        const res = await fecthApi<FetchTrailersType>(videosEndPoint(video.id));
+        const res = await fecthApi<FetchTrailersType>(
+          VIDEOS_ENDPOINT(video.id)
+        );
 
         const trailer = res.results.find(
           (video: VideoResultType) => video.type === 'Trailer'
