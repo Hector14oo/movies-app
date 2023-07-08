@@ -1,4 +1,4 @@
-export const options = {
+export const OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
@@ -7,13 +7,15 @@ export const options = {
   },
 };
 
-export const searchEndPoint = (value: string) =>
-  `https://api.themoviedb.org/3/search/movie?query=${value}&page=1`;
+export const SEARCH_ENDPOINT = (value: string) => `https://api.themoviedb.org/3/search/movie?query=${value}&page=1`;
 
-export const trendingEndPoint =
-  'https://api.themoviedb.org/3/trending/movie/week';
+export const TRENDING_ENDPOINT = 'https://api.themoviedb.org/3/trending/movie/week';
 
-export const upComingEndPoint = 'https://api.themoviedb.org/3/movie/upcoming';
+export const UP_COMING_ENDPOINT = 'https://api.themoviedb.org/3/movie/upcoming';
 
-export const videosEndPoint = (id: number) =>
-  `https://api.themoviedb.org/3/movie/${id}/videos`;
+export const VIDEOS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/videos`;
+
+export const MOVIE_DETAILS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}`;
+
+export const MOVIE_CREDITS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/credits`;
+

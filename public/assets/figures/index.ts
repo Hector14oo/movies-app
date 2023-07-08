@@ -5,3 +5,4 @@ export { LoginFigure } from './LoginFigure';
 export { RegisterFigure } from './RegisterFigure';
 export { SearchFigure } from './SearchFigure';
 export { SettingPasswordFigure } from './SettingPasswordFigure';
+export { TMDBLogo } from './TMDBLogo';
