@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { MouseEvent, useEffect, useState } from 'react';
 import { ButtonNormal, InputEmail, InputPassword } from '@components';
@@ -9,10 +10,18 @@ import { LoginFigure } from 'assets/figures';
 import { useGoogleAuth } from '@hooks/useGoogleAuth';
 
 import styles from '@styles/containers/Login.module.css';
+import { useSessionContext } from '@context/SessionContext';
 
 export function Login() {
+  const { user } = useSessionContext();
+  const { push } = useRouter();
   const { logInWithGoogle } = useGoogleAuth();
   const [isBlind, setIsBlind] = useState(false);
+
+  useEffect(() => {
+    if (!user) return;
+    push('/');
+  }, [user, push]);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
