@@ -4,7 +4,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { MouseEvent, useEffect, useState } from 'react';
-import { ButtonNormal, InputEmail, InputPassword } from '@components';
+import {
+  ButtonGoogle,
+  ButtonNormal,
+  InputEmail,
+  InputPassword,
+} from '@components';
 import { LoginFigure } from 'assets/figures';
 
 import { useGoogleAuth } from '@hooks/useGoogleAuth';
@@ -50,10 +55,7 @@ export function Login() {
         <span>
           New here? <Link href={'/account/register'}>Register</Link>
         </span>
-        <ButtonNormal
-          text='Login With Google'
-          onClick={handleClick}
-        />
+        <ButtonGoogle onClick={handleClick} />
       </form>
     </main>
   );
