@@ -12,6 +12,7 @@
   --BAD: #f15a59;
   --MEH: #f9d949;
   --GOOD: #9ae66e;
+  --GOOGLE: rgb(57, 62, 70, 0.15);
 
   /* LINEAR GRADIENT */
   --GRADIENT: linear-gradient(
