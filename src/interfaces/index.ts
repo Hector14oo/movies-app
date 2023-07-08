@@ -106,4 +106,5 @@ export interface MovieDetailsType {
     name: string;
     picture: string;
     character: string;
+  }>;
 }
