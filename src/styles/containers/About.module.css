@@ -16,6 +16,12 @@
 
   fill: var(--C2);
 }
+.About section:nth-child(1) figure > svg {
+  width: 200px;
+  height: 50px;
+
+  fill: var(--C2);
+}
 .About section p{
   font-weight: 500;
 }
@@ -25,7 +31,8 @@
   justify-content: center;
   gap: 20px;
 }
-.About section:nth-child(1){
+.About section:nth-child(1),
+.About section:nth-child(2){
   flex-direction: column;
 }
 .About section nav h2{
