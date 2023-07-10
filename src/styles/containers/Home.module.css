@@ -31,3 +31,10 @@
 .Main > section:nth-child(4) {
   flex-direction: column;
 }
+
+@media (min-width: 768px) {
+  .Main > h1,
+  .Main > h2 {
+    font-size: var(--MIDDLE);
+  }
+}
