@@ -22,15 +22,12 @@
   width: 100%;
   height: 100%;
 }
-.Main > section:nth-child(2) {
+.Main > section {
   width: 100%;
   height: 100%;
   display: flex;
   gap: 20px;
 }
 .Main > section:nth-child(4) {
-  width: 100%;
-  display: flex;
   flex-direction: column;
-  gap: 20px;
 }
