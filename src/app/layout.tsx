@@ -1,5 +1,6 @@
 import { Header } from '@components';
 import { SessionProvider } from '@context/SessionContext';
+import { FavoritesProvider } from '@context/FavoritesContext';
 import '@styles/globals.css';
 
 import { Roboto as Font } from 'next/font/google';
@@ -16,8 +17,10 @@ function RootLayout({ children }: { children: React.ReactNode }) {
     <html lang='en'>
       <body className={inter.className}>
         <SessionProvider>
-          <Header />
-          {children}
+          <FavoritesProvider>
+            <Header />
+            {children}
+          </FavoritesProvider>
         </SessionProvider>
       </body>
     </html>

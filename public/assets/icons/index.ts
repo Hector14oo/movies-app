@@ -6,6 +6,7 @@ export { CakeSvg } from './CakeSvg';
 export { EyeSvg } from './EyeSvg';
 export { GitHubSvg } from './GitHubSvg';
 export { GlassSvg } from './GlassSvg';
+export { GoogleSvg } from './GoogleSvg';
 export { HeartFillSvg } from './HeartFillSvg';
 export { HeartOutLineSvg } from './HeartOutLineSvg';
 export { HomeSvg } from './HomeSvg';

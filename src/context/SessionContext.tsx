@@ -1,28 +1,25 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  useState,
-  Dispatch,
-  SetStateAction,
-  ReactNode,
-} from 'react';
+import { useSession } from '@hooks/useSession';
+import { userType } from '@interfaces';
+
+import { createContext, useContext, ReactNode } from 'react';
 
 export type ContextProps = {
-  loged: boolean;
-  setLoged: Dispatch<SetStateAction<boolean>>;
+  user?: userType;
+  logOut: () => void;
 };
 
 export const SessionContext = createContext<ContextProps>({
-  loged: false,
-  setLoged: () => {},
+  user: undefined,
+  logOut: () => {},
 });
 
 export const SessionProvider = ({ children }: { children: ReactNode }) => {
-  const [session, setSession] = useState(false);
+  const { user, logOut } = useSession();
+
   return (
-    <SessionContext.Provider value={{ loged: session, setLoged: setSession }}>
+    <SessionContext.Provider value={{ user, logOut }}>
       {children}
     </SessionContext.Provider>
   );

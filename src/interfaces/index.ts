@@ -72,11 +72,12 @@ export interface sliderClickTypes {
 }
 
 export interface userType {
-  displaName: string | null;
+  id: string;
+  name: string | null;
   email: string | null;
   profilePicture: string | null;
-  uid: string;
-  favorites: Array<MovieType>;
+  favorites?: Array<MovieType>;
+}
 
 export interface PersonType {
   id: number;
@@ -105,5 +106,5 @@ export interface MovieDetailsType {
     name: string;
     picture: string;
     character: string;
-}>;
+  }>;
 }
