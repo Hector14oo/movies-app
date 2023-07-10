@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useAuth } from '@hooks/useAuth';
+import { useSession } from '@hooks/useSession';
 
 import { Logo, ButtonClose, ButtonNormal, ButtonLink } from '@components';
 import {
@@ -30,17 +30,13 @@ const PATHS = [
 ];
 
 export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
-  const { userData, logOut } = useAuth();
+  const { user, logOut } = useSession();
   const pathName = usePathname();
 
   const handleLink = (route?: string) => {
     if (pathName === route) return;
     toggleMenu();
   };
-
-  let imgUser = userData?.photoURL
-    ? userData.photoURL
-    : 'assets/Images/BrokenImage.png';
 
   return (
     <nav className={styles.FloatingMenu}>
@@ -79,18 +75,18 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
       </main>
 
       <footer>
-        {userData ? (
+        {user ? (
           <>
             <article>
               <figure
                 style={{
-                  background: `url(${imgUser}) no-repeat center/cover`,
+                  background: `url(${user.profilePicture}) no-repeat center/cover`,
                 }}
               />
               <main>
                 <section>
-                  <h2>{userData.displayName}</h2>
-                  <p>{userData.email}</p>
+                  <h2>{user.name}</h2>
+                  <p>{user.email}</p>
                 </section>
               </main>
             </article>

@@ -33,3 +33,36 @@
   fill: var(--C2);
   pointer-events: none;
 }
+
+.Google {
+  width: 100%;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  font-weight: 700;
+  font-size: var(--SMALL);
+  color: var(--C3-80);
+
+  border-radius: 100px;
+  background-color: var(--GOOGLE);
+  box-shadow: var(--SHADOW);
+  text-decoration: none;
+}
+.Google i {
+  width: fit-content;
+  height: fit-content;
+  margin: auto 8px;
+  display: grid;
+  place-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.Google i svg {
+  width: 26px;
+  height: 26px;
+}
