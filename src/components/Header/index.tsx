@@ -39,14 +39,11 @@ export function Header() {
   return (
     <>
       {path !== '/choose-username' && (
-        <header className={`${styles.Header} ${className}`}>
-          <nav
-            style={
-              excludeRoutes.includes(path) || path.includes('/movie-details/')
-                ? { backgroundColor: 'transparent' }
-                : {}
-            }
-          >
+        <header
+          className={`${styles.Header} ${className}`}
+          style={(excludeRoutes.includes(path) || path.includes('/movie-details/')) ? { backgroundColor: 'transparent' } : {}}
+        >
+          <nav>
             <ButtonBack />
 
             {!excludeRoutes.includes(path) && (
