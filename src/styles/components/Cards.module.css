@@ -106,31 +106,26 @@
 .ArtistCard {
   min-width: 100px;
   min-height: 150px;
-  width: 100%;
-  height: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-decoration: none;
 
-  background: var(--GRADIENT),
-    url('https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZPEQXUEQKFELNAMFUTACTVA6NY.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   border-radius: var(--BR-3);
   box-shadow: var(--SHADOW);
 }
-.ArtistCard main {
+.ArtistCard article {
   width: 100%;
   height: fit-content;
+  padding: 0;
 }
-.ArtistCard main h2 {
+.ArtistCard article h2 {
   font-size: calc(var(--SMALLY) + 1px);
   color: var(--C1);
   font-weight: 700;
 }
-.ArtistCard main p {
+.ArtistCard article p {
   color: var(--C1-70);
   font-size: var(--SMALLY);
   font-weight: 700;
@@ -152,10 +147,10 @@
     min-width: 200px;
     min-height: 250px;
   }
-  .ArtistCard main h2 {
+  .ArtistCard article h2 {
     font-size: calc(var(--MIDDLE) + 1px);
   }
-  .ArtistCard main p {
+  .ArtistCard article p {
     font-size: var(--MIDDLELY);
   }
 }

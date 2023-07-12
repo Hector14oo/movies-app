@@ -33,28 +33,35 @@ export async function MovieDetails({ movieId }: { movieId: number }) {
             }}
           />
           <main>
-            <Rank
-              votes={Number(result?.movieDetails?.vote_average?.toFixed(1))}
-            />
-            <h1>{result?.movieDetails.title}</h1>
-            <p>
-              {result?.movieDetails?.genres?.map((genre) => `${genre.name} `)}
-            </p>
-            <p>{formatHour(result?.movieDetails.runtime || 0)}</p>
+            <section>
+              <Rank
+                votes={Number(result?.movieDetails?.vote_average?.toFixed(1))}
+              />
+              <h1>{result?.movieDetails.title}</h1>
+              <p>
+                {result?.movieDetails?.genres?.map(
+                  (genre, index, arr) =>
+                    `${genre.name}${index + 1 === arr.length ? '.' : ', '}`
+                )}
+              </p>
+              <p>{formatHour(result?.movieDetails.runtime || 0)}</p>
+            </section>
 
             <p>{result?.movieDetails.overview}</p>
 
-            <h2>Cast</h2>
-
             <section>
-              {result?.cast.map((artist) => (
-                <CardArtist
-                  key={artist.id}
-                  name={artist.name}
-                  character={artist.character}
-                  picture={artist.picture}
-                />
-              ))}
+              <h2>Cast</h2>
+
+              <div>
+                {result?.cast.map((artist) => (
+                  <CardArtist
+                    key={artist.id}
+                    name={artist.name}
+                    character={artist.character}
+                    picture={artist.picture}
+                  />
+                ))}
+              </div>
             </section>
           </main>
         </main>

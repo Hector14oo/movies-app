@@ -11,17 +11,14 @@ export function Artist({ name, character, picture }: ArtistProps) {
     <Link
       href={`https://www.google.com/search?q=${name}`}
       target='_blank'
+      className={styles.ArtistCard}
+      style={{
+        background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
+      }}
     >
-      <article
-        className={styles.ArtistCard}
-        style={{
-          background: `var(--GRADIENT), url(${imgCover}) no-repeat center/cover`,
-        }}
-      >
-        <main>
-          <h2>{name}</h2>
-          <p>{character}</p>
-        </main>
+      <article>
+        <h2>{name}</h2>
+        <p>{character}</p>
       </article>
     </Link>
   );
