@@ -45,9 +45,9 @@ export async function MovieDetails({ movieId }: { movieId: number }) {
                 )}
               </p>
               <p>{formatHour(result?.movieDetails.runtime || 0)}</p>
+              
+              <p>{result?.movieDetails.overview}</p>
             </section>
-
-            <p>{result?.movieDetails.overview}</p>
 
             <section>
               <h2>Cast</h2>
