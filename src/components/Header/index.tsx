@@ -8,6 +8,7 @@ import {
   ButtonFavorite,
   FloatingMenu,
 } from '@components';
+
 import styles from '@styles/components/Header.module.css';
 
 const routes: Record<string, string> = {
