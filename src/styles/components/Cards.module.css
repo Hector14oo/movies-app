@@ -135,3 +135,27 @@
   font-size: var(--SMALLY);
   font-weight: 700;
 }
+
+@media (min-width: 768px) {
+  .Card footer h2 {
+    font-size: var(--MIDDLE);
+  }
+  .Card footer p {
+    font-size: var(--MIDDLELY);
+  }
+
+  .TrailerCard h2 {
+    font-size: var(--MIDDLE);
+  }
+
+  .ArtistCard {
+    min-width: 200px;
+    min-height: 250px;
+  }
+  .ArtistCard main h2 {
+    font-size: calc(var(--MIDDLE) + 1px);
+  }
+  .ArtistCard main p {
+    font-size: var(--MIDDLELY);
+  }
+}
