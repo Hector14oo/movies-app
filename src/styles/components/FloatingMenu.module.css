@@ -92,3 +92,27 @@
   color: var(--C1-70);
   font-size: var(--SMALLY);
 }
+
+@media (min-width: 768px) {
+  .FloatingMenu main h1 {
+    font-size: var(--LARGE);
+  }
+  .FloatingMenu main ul li a span {
+    font-size: var(--MIDDLE);
+  }
+  .FloatingMenu main ul li a span svg {
+    width: 56px;
+    height: 56px;
+  }
+  .FloatingMenu main ul li a svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .FloatingMenu footer article main h2 {
+    font-size: var(--LARGE);
+  }
+  .FloatingMenu footer article main p {
+    font-size: var(--LARGELY);
+  }
+}
