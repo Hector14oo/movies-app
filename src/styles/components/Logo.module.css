@@ -14,7 +14,17 @@
   border-radius: var(--BR-1);
   box-shadow: var(--SHADOW);
 }
-.Logo > svg{
-  width: 28px;
-  height: 28px;
+.Logo > svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (min-width: 768px) {
+  .Logo {
+    font-size: 46px;
+  }
+  .Logo > svg {
+    width: 46px;
+    height: 46px;
+  }
 }

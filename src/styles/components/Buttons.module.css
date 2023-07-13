@@ -68,8 +68,27 @@
 }
 
 @media (min-width: 768px) {
+  .Button {
+    height: 60px;
+
+    font-size: var(--LARGE);
+  }
+
+  .SpecialButton {
+    width: fit-content;
+    height: fit-content;
+  }
   .SpecialButton > svg {
     width: 26px;
     height: 26px;
+  }
+
+  .MenuButton {
+    width: 66px;
+    height: 66px;
+  }
+  .MenuButton svg {
+    width: 56px;
+    height: 56px;
   }
 }
