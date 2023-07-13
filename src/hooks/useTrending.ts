@@ -14,7 +14,7 @@ export async function useTrending() {
         id: movie.id,
         title: movie.title,
         date: movie.release_date,
-        votes: Number(movie.vote_average.toFixed(1)),
+        votes: movie.vote_average,
         poster: movie.poster_path,
       });
     });
