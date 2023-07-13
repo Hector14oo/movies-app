@@ -104,8 +104,8 @@
 }
 
 .ArtistCard {
-  min-width: 100px;
-  min-height: 150px;
+  min-width: 150px;
+  min-height: 200px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@
   padding: 0;
 }
 .ArtistCard article h2 {
-  font-size: calc(var(--SMALLY) + 1px);
+  font-size: (--SMALLY);
   color: var(--C1);
   font-weight: 700;
 }
@@ -145,10 +145,11 @@
 
   .ArtistCard {
     min-width: 200px;
-    min-height: 250px;
+    min-height: 300px;
+    border-radius: var(--BR-6);
   }
   .ArtistCard article h2 {
-    font-size: calc(var(--MIDDLE) + 1px);
+    font-size: var(--MIDDLE);
   }
   .ArtistCard article p {
     font-size: var(--MIDDLELY);

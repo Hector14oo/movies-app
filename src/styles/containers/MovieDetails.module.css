@@ -46,6 +46,10 @@
   color: var(--C3);
   font-weight: 300;
 }
+.MovieDetails main section:nth-child(2) > h2 {
+  margin-bottom: 20px;
+  font-size: var(--MIDDLE);
+}
 .MovieDetails main section:nth-child(2) div {
   width: 100%;
   display: flex;
@@ -54,6 +58,9 @@
 }
 
 @media (min-width: 768px) {
+  .MovieDetails main section:nth-child(1) span {
+    font-size: var(--LARGELY);
+  }
   .MovieDetails main section:nth-child(1) > h1,
   .MovieDetails main section:nth-child(1) > h2 {
     font-size: var(--LARGE);
