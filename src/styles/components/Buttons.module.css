@@ -66,3 +66,10 @@
   width: 26px;
   height: 26px;
 }
+
+@media (min-width: 768px) {
+  .SpecialButton > svg {
+    width: 26px;
+    height: 26px;
+  }
+}
