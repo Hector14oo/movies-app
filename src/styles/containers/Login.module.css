@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.ForgotPassword form h1{
+.Login form h1 {
   width: 100%;
 }
 .Login form a,
@@ -27,4 +27,22 @@
 .Login form span {
   width: 100%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .Login {
+    padding: 20px 120px;
+  }
+  .Login > svg {
+    width: 350px;
+    height: 400px;
+  }
+
+  .Login form h1 {
+    font-size: var(--LARGE);
+  }
+  .Login form a,
+  .Login span {
+    font-size: var(--LARGELY);
+  }
 }

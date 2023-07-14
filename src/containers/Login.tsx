@@ -47,13 +47,13 @@ export function Login() {
           toggleBlind={toggleBlind}
           placeholder='Password'
         />
-        <Link href={'/account/forgot-password'}>Forgot Password?</Link>
+        <Link href={'/forgot-password'}>Forgot Password?</Link>
         <ButtonNormal
           text='Login'
           onClick={handleClick}
         />
         <span>
-          New here? <Link href={'/account/register'}>Register</Link>
+          New here? <Link href={'/register'}>Register</Link>
         </span>
         <ButtonGoogle onClick={handleClick} />
       </form>
