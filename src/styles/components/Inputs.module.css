@@ -34,11 +34,11 @@
 .Searcher > input::placeholder {
   color: var(--C3-50);
 }
-.Searcher > button{
+.Searcher > button {
   display: grid;
   place-items: center;
 }
-.Searcher > button svg{
+.Searcher > button svg {
   fill: var(--C2);
 }
 
@@ -55,6 +55,7 @@
 }
 .FormInput i {
   width: 20px;
+  height: fit-content;
 }
 .FormInput input {
   width: 100%;
@@ -77,4 +78,24 @@
 
   color: var(--C3-50);
   background-color: var(--C1);
+}
+
+@media (min-width: 768px) {
+  .FormInput {
+    height: 60px;
+  }
+  .FormInput input {
+    font-size: var(--MIDDLE);
+  }
+  .FormInput i {
+    width: 30px;
+  }
+  .FormInput i svg {
+    width: 30px;
+    height: 30px;
+  }
+  .FormInput i:nth-child(3) svg {
+    width: 30px;
+    height: 30px;
+  }
 }
