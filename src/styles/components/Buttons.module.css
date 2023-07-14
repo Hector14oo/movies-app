@@ -70,8 +70,7 @@
 @media (min-width: 768px) {
   .Button {
     height: 60px;
-
-    font-size: var(--LARGE);
+    font-size: var(--MIDDLE);
   }
 
   .SpecialButton {
@@ -90,5 +89,15 @@
   .MenuButton svg {
     width: 56px;
     height: 56px;
+  }
+
+  .Google {
+    height: 60px;
+    
+    font-size: var(--MIDDLE);
+  }
+  .Google i svg {
+    width: 36px;
+    height: 36px;
   }
 }
