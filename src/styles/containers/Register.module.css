@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.ForgotPassword form h1{
+.Register form h1{
   width: 100%;
 }
 .Register form span,
@@ -23,4 +23,22 @@
 }
 .Register form span a {
   color: var(--C2);
+}
+
+@media (min-width: 768px) {
+  .Register {
+    padding: 20px 120px;
+  }
+  .Register > svg {
+    width: 350px;
+    height: 400px;
+  }
+
+  .Register form h1 {
+    font-size: var(--LARGE);
+  }
+  .Register form span,
+  .Register form span a{
+    font-size: var(--LARGELY);
+  }
 }
