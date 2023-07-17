@@ -14,5 +14,6 @@
   height: 100%;
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
   animation: Appear 0.75s var(--TRANSITION-2) forwards;
 }
