@@ -109,6 +109,10 @@
     height: 36px;
   }
 
+  .FloatingMenu footer article figure {
+    width: 144px;
+    height: 144px;
+  }
   .FloatingMenu footer article main h2 {
     font-size: var(--LARGE);
   }
