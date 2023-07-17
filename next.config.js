@@ -8,11 +8,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'media.revistagq.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'hips.hearstapps.com',
+        hostname: 'image.tmdb.org',
       },
     ],
   },

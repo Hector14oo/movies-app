@@ -2,6 +2,7 @@ export {
   Back as ButtonBack,
   Close as ButtonClose,
   Favorite as ButtonFavorite,
+  Google as ButtonGoogle,
   Link as ButtonLink,
   Menu as ButtonMenu,
   Normal as ButtonNormal,
