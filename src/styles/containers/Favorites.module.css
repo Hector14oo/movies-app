@@ -20,6 +20,17 @@
 }
 
 @media (min-width: 768px) {
+  .Favorites {
+    padding: 20px 120px;
+  }
+  .Favorites > svg {
+    width: 400px;
+    height: 450px;
+  }
+  .Favorites > h1 {
+    font-size: var(--MIDDLE);
+  }
+
   .FavoritesFilled {
     grid-template-columns: 1fr 1fr 1fr;
   }
