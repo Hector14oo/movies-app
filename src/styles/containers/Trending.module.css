@@ -10,9 +10,9 @@
 }
 
 .Trending {
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  max-width: calc(100vw - 40px);
   align-items: flex-start;
+  justify-content: center;
   animation: Appear 0.75s var(--TRANSITION-2) forwards;
 }
