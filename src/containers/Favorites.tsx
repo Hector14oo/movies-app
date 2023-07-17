@@ -1,44 +1,50 @@
 'use client';
 
+import { MovieType } from '@interfaces';
+import { useSession } from '@hooks/useSession';
+import { useFavoritesContext } from '@context/FavoritesContext';
+
 import { ButtonLink, CardPoster } from '@components';
-import { useSessionContext } from '@context/SessionContext';
 import { EmptyFigure, LoginFigure } from 'assets/figures';
+
 import styles from '@styles/containers/Favorites.module.css';
 
 export function Favorites() {
-  const { loged } = useSessionContext();
-  const array: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const { user } = useSession();
+  const { favList } = useFavoritesContext();
 
-  if (!loged)
+  if (!user) {
     return (
       <main className={styles.Favorites}>
         <LoginFigure />
         <h1>Please login to add your favorite movies to this section</h1>
         <ButtonLink
-          href={'/account/login'}
+          href={'/login'}
           text='Login'
         />
       </main>
     );
+  }
 
-  if (loged && !array.length)
+  if (user && !favList.length) {
     return (
       <main className={styles.Favorites}>
         <EmptyFigure />
         <h1>This section is empty, go and add some movies!</h1>
       </main>
     );
+  }
 
   return (
     <main className={styles.FavoritesFilled}>
-      {array.map((_, i) => (
+      {favList.map(({ id, title, date, votes, poster }: MovieType) => (
         <CardPoster
-          key={i}
-          id={i}
-          title='Super Mario Bros'
-          date='Apr 05, 2023'
-          votes={6.2}
-          poster={''}
+          key={id}
+          id={id}
+          title={title}
+          date={date}
+          votes={votes}
+          poster={poster}
         />
       ))}
     </main>

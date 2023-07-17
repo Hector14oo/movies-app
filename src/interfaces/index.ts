@@ -8,6 +8,11 @@ export interface ResultType {
   vote_average: number;
   poster_path: string;
   backdrop_path?: string;
+  runtime?: number;
+  genres?: Array<{
+    id: number;
+    name: string;
+  }>;
 }
 
 export interface VideoResultType {
@@ -38,10 +43,17 @@ export interface MovieType {
   overview?: string;
   votes: number;
   poster: string;
+  backdrop?: string;
 }
 
 export interface PosterProps extends MovieType {
   className?: string;
+}
+
+export interface ArtistProps {
+  name: string;
+  character: string;
+  picture: string;
 }
 
 export interface IconProps {
@@ -60,9 +72,39 @@ export interface sliderClickTypes {
 }
 
 export interface userType {
-  displaName: string | null;
+  id: string;
+  name: string | null;
   email: string | null;
   profilePicture: string | null;
-  uid: string;
-  favorites: Array<MovieType>;
+  favorites?: Array<MovieType>;
+}
+
+export interface PersonType {
+  id: number;
+  original_name: string;
+  profile_path: string;
+}
+
+export interface CastMember extends PersonType {
+  character: string;
+}
+export interface CrewMember extends PersonType {
+  department: string;
+  job: string;
+}
+
+export interface CreditsType {
+  id: number;
+  cast: Array<CastMember>;
+  crew: Array<CrewMember>;
+}
+
+export interface MovieDetailsType {
+  movieDetails: MovieType;
+  cast: Array<{
+    id: number;
+    name: string;
+    picture: string;
+    character: string;
+  }>;
 }

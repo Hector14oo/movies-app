@@ -14,7 +14,3 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 250px;
 }
-.FavoritesFilled article {
-  width: 40vw;
-  height: 250px;
-}

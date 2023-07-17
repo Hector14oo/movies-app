@@ -1,13 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  getBytes,
-} from 'firebase/storage';
+import { getStorage } from 'firebase/storage';
 
 import {
   getFirestore,
@@ -46,16 +40,35 @@ export async function userExists(uid: string) {
     const res = await getDoc(docRef);
     return res.exists();
   } catch (error) {
-    return console.log(error);
+    return console.error(error);
   }
 }
 
 export async function userRegister(user: userType) {
   try {
     const collectionRef = collection(db, 'users');
-    const docRef = doc(collectionRef, user.uid);
+    const docRef = doc(collectionRef, user.id);
     await setDoc(docRef, user);
   } catch (error) {
-    return console.log(error);
+    return console.error(error);
+  }
+}
+
+export async function getFavs(uid: string) {
+  try {
+    const docRef = doc(db, 'users', uid);
+    const document = await getDoc(docRef);
+    return document.data();
+  } catch (error) {
+    return console.error(error);
+  }
+}
+
+export async function updateFav(targetUser: userType) {
+  try {
+    const docRef = doc(db, 'users', targetUser.id);
+    await setDoc(docRef, targetUser);
+  } catch (error) {
+    return console.error(error);
   }
 }
