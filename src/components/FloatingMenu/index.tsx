@@ -80,7 +80,7 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
             <article>
               <figure
                 style={{
-                  background: `url(${user.profilePicture}) no-repeat center/cover`,
+                  background: `url(${user.profilePicture || 'assets/Images/BrokenImage.png'}) no-repeat center/cover`,
                 }}
               />
               <main>
