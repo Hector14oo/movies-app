@@ -39,10 +39,10 @@
   }
 
   .Login form h1 {
-    font-size: var(--LARGE);
+    font-size: var(--MIDDLE);
   }
   .Login form a,
   .Login span {
-    font-size: var(--LARGELY);
+    font-size: var(--MIDDLELY);
   }
 }
