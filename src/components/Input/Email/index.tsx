@@ -4,7 +4,7 @@ import styles from '@styles/components/Inputs.module.css';
 export function Email({
   placeholder,
 }: {
-  placeholder: 'Email' | 'Confirm Email';
+  placeholder: 'Email' | 'Confirm Email' | 'Enter your Email';
 }) {
   return (
     <label
