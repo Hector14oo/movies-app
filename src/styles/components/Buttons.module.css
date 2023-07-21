@@ -69,7 +69,7 @@
 
 @media (min-width: 768px) {
   .Button {
-    height: 60px;
+    height: 50px;
     font-size: var(--MIDDLE);
   }
 
@@ -92,7 +92,7 @@
   }
 
   .Google {
-    height: 60px;
+    height: 50px;
     
     font-size: var(--MIDDLE);
   }
