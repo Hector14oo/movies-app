@@ -1,13 +1,24 @@
 'use client';
 
-import { SyntheticEvent, useRef } from 'react';
+import { SyntheticEvent, useEffect, useRef } from 'react';
 import { ButtonBack, CardPoster } from '@components';
 import { MovieType, sliderClickTypes } from '@interfaces';
 
 import styles from '@styles/components/Slider.module.css';
+import { useViewport } from '@hooks/useViewport';
 
 export function Slider({ array }: { array: Array<MovieType> | [] }) {
+  const { width } = useViewport();
   const slider = useRef<HTMLDivElement>(null);
+
+  const transform1 =
+    width >= 768
+      ? 'translateX(calc(-1536px + 40px)'
+      : 'translateX(calc(-200vw + 40px)';
+  const transform2 =
+    width >= 768
+      ? 'translateX(calc(-768px + 20px)'
+      : 'translateX(calc(-100vw + 20px)';
 
   const cardsResizer = (current: HTMLDivElement, targets: number[]) => {
     const targetNode1 = current.children[targets[0]] as HTMLAnchorElement;
@@ -39,25 +50,36 @@ export function Slider({ array }: { array: Array<MovieType> | [] }) {
       cardsResizer(current, [0, 1, 2]);
 
       current.style.transition = 'none';
-      current.style.transform = 'translateX(calc(-200vw + 40px)';
+      current.style.transform = transform1;
 
       setTimeout(() => {
         current.style.transition = 'all 700ms var(--TRANSITION-1)';
-        current.style.transform = 'translateX(calc(-100vw + 20px)';
+        current.style.transform = transform2;
       }, 30);
     } else {
       cardsResizer(current, [1, 2, 3]);
 
       current.style.transition = 'all 700ms var(--TRANSITION-1)';
-      current.style.transform = 'translateX(calc(-200vw + 40px)';
+      current.style.transform = transform1;
 
       setTimeout(() => {
         current.appendChild(current.children[0]);
         current.style.transition = 'none';
-        current.style.transform = 'translateX(calc(-100vw + 20px)';
+        current.style.transform = transform2;
       }, 700);
     }
   };
+
+  useEffect(() => {
+    if (!slider.current?.children.length) return;
+    const { current } = slider;
+
+    cardsResizer(current, [0, 1, 2]);
+    current.style.transition = 'all 700ms var(--TRANSITION-1)';
+    current.style.transform = transform2;
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
 
   return (
     <>

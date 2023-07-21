@@ -77,7 +77,11 @@
   .Buttons {
     padding: 0 26px;
   }
+  .Slider {
+    grid-template-columns: repeat(20, calc(768px - 40px));
+    transform: translateX(calc(-768px + 20px));
+  }
   .Slider a {
-    width: calc(90vw - 40px);
+    width: calc(691.2px  - 40px);
   }
 }
