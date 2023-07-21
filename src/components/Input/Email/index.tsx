@@ -20,6 +20,7 @@ export function Email({
       <input
         type='email'
         id={placeholder}
+        name='email'
         placeholder={placeholder}
         required
       />
