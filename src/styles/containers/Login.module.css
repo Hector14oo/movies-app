@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 20px;
 }
-.ForgotPassword form h1{
+.ForgotPassword form h1 {
   width: 100%;
 }
 .Login form a,
@@ -27,4 +27,10 @@
 .Login form span {
   width: 100%;
   text-align: center;
+}
+.Login .Error {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  color: var(--BAD);
 }
