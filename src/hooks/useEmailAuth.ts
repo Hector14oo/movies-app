@@ -16,7 +16,8 @@ export function useEmailAuth() {
 
     try {
       const singMethod = await fetchSignInMethodsForEmail(auth, email);
-      if(singMethod.includes('google.com')) throw new Error('User must login with Google.')
+      if(singMethod.includes('google.com')) return setError('User must login with Google.')
+      await signInWithEmailAndPassword(auth, email, password)
     } catch (err) {
       if (err instanceof Error) setError(err.message);
     }

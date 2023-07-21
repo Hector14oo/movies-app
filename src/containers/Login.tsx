@@ -22,7 +22,7 @@ import styles from '@styles/containers/Login.module.css';
 const message = [
   'Firebase: Error (auth/user-not-found)',
   'Firebase: Error (auth/wrong-password)',
-  'User must login with Google.'
+  'User must login with Google.',
 ];
 
 export function Login() {
@@ -63,15 +63,21 @@ export function Login() {
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <InputEmail placeholder='Email' />
-        {error.includes(message[0]) && <span className={styles.Error}>The email is not registered.</span>}
+        {error.includes(message[0]) && (
+          <span className={styles.Error}>The email is not registered.</span>
+        )}
         <InputPassword
           isBlind={isBlind}
           toggleBlind={toggleBlind}
           placeholder='Password'
         />
-        {error.includes(message[1]) && <span className={styles.Error}>The password is incorrect.</span>}
+        {error.includes(message[1]) && (
+          <span className={styles.Error}>The password is incorrect.</span>
+        )}
         <Link href={'/forgot-password'}>Forgot Password?</Link>
-        {error.includes(message[2]) && <span className={styles.Error}>{message[2]}</span>}
+        {error.includes(message[2]) && (
+          <span className={styles.Error}>{message[2]}</span>
+        )}
         <ButtonNormal
           text='Login'
           onClick={() => {}}
