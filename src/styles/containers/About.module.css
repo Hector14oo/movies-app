@@ -57,12 +57,7 @@
     width: 400px;
     height: 120px;
   }
-  .About section p{
-    font-size: var(--MIDDLE);
-  }
-  .About section nav h2{
-    font-size: var(--MIDDLE);
-  } 
+  
   .About section ul li {
     width: 56px;
     height: 56px;
