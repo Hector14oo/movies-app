@@ -75,7 +75,7 @@
 
 @media (min-width: 768px) {
   .Searcher {
-    width: 60%;
+    width: 50%;
     height: 70px;
   }
   .Searcher > svg {
