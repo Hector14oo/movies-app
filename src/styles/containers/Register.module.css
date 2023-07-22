@@ -35,10 +35,10 @@
   }
 
   .Register form h1 {
-    font-size: var(--LARGE);
+    font-size: var(--MIDDLE);
   }
   .Register form span,
   .Register form span a{
-    font-size: var(--LARGELY);
+    font-size: var(--MIDDLELY);
   }
 }
