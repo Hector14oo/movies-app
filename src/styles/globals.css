@@ -66,10 +66,10 @@ body {
   min-height: 100vh;
 }
 
-body::-webkit-scrollbar{
+*::-webkit-scrollbar{
   width: 8px;
 }
-body::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb{
   width: 8px;
   background-color: #8f43ee;
 }
