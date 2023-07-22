@@ -17,7 +17,7 @@
 .Search > section > h1 {
   width: 100%;
   font-size: var(--SMALL);
-  font-weight: 500;
+  font-weight: 300;
   text-align: center;
 }
 .Search > section > a {
@@ -26,8 +26,8 @@
 
 @media (min-width: 768px) {
   .Search > section > svg {
-    width: 450px;
-    height: 500px;
+    width: 350px;
+    height: 400px;
   }
   .Search > section > a {
     height: 500px;
@@ -36,7 +36,7 @@
     font-size: var(--MIDDLE);
   }
   .Search section p {
-    font-size: var(--LARGELY);
+    font-size: var(--MIDDLE);
   }
 
   .GRID {
