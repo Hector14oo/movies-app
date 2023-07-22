@@ -1,5 +1,7 @@
 .FloatingMenu {
+  margin: 0 auto;
   width: 100%;
+  max-width: 768px;
   height: 100%;
   padding: 20px;
   display: grid;
@@ -8,8 +10,9 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 2;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   background: rgba(57, 62, 70, 0.9);
   backdrop-filter: blur(4px);
