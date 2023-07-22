@@ -12,6 +12,7 @@
   background-color: var(--C2);
   box-shadow: var(--SHADOW);
   text-decoration: none;
+  cursor: pointer;
 }
 .MenuButton {
   width: 46px;

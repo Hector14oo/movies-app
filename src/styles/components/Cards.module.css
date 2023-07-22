@@ -45,9 +45,10 @@
   display: grid;
   place-items: center;
   grid-template-rows: 1fr auto;
-
+  
   border-radius: var(--BR-3);
   box-shadow: var(--SHADOW);
+  cursor: pointer;
 }
 .TrailerCard h2 {
   width: 100%;
