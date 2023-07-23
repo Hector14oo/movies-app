@@ -4,21 +4,10 @@
   justify-content: center;
   text-align: center;
   gap: 40px;
-}
-.About section figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.About section figure > svg {
-  width: 84px;
-  height: 84px;
-
-  fill: var(--C2);
-}
-.About section:nth-child(1) figure > svg {
+} 
+.About section:nth-child(1) figure a > svg {
   width: 200px;
-  height: 50px;
+  height: 60px;
 
   fill: var(--C2);
 }
@@ -45,8 +34,8 @@
   gap: 20px;
 }
 .About section ul li {
-  width: var(--LARGE);
-  height: var(--LARGE);
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,4 +50,16 @@
 .About section nav:nth-child(2) ul li:nth-child(1) a svg{
   fill: var(--C1);
   stroke: var(--C2);
+}
+
+@media (min-width: 768px) {
+  .About section:nth-child(1) figure a > svg {
+    width: 400px;
+    height: 120px;
+  }
+  
+  .About section ul li {
+    width: 56px;
+    height: 56px;
+  }
 }

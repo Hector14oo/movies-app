@@ -8,14 +8,14 @@ export async function Trending() {
   return (
     <main className={styles.Trending}>
       {error ? (
-        <main className={styles.MainError}>
+        <section className={styles.MainError}>
           <ErrorFigure
             width={300}
             height={250}
           />
           <h1>{"We're sorry, an error has occurred :("}</h1>
           <p>{error?.toString()}, try again</p>
-        </main>
+        </section>
       ) : (
         <Slider array={result ?? []} />
       )}

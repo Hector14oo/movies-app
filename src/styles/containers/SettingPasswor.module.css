@@ -10,6 +10,20 @@
   flex-direction: column;
   gap: 20px;
 }
-.SettingPasswor form h1{
+.SettingPasswor form h1 {
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .SettingPasswor {
+    padding: 20px 120px;
+  }
+  .SettingPasswor > svg {
+    width: 350px;
+    height: 400px;
+  }
+
+  .SettingPasswor form h1 {
+    font-size: var(--LARGE);
+  }
 }

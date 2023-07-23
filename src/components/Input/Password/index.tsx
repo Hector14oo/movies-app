@@ -20,7 +20,7 @@ export function Password({
       className={styles.FormInput}
     >
       <i>
-        <PadLockSvg  width={20} height={25}/>
+        <PadLockSvg />
       </i>
       <input
         type={isBlind ? 'text' : 'password'}
@@ -29,7 +29,7 @@ export function Password({
         placeholder={placeholder}
         required
       />
-      <i onClick={toggleBlind}>{isBlind ? <BlindEyeSvg width={20} height={20} /> : <EyeSvg width={20} height={20} />}</i>
+      <i onClick={toggleBlind}>{isBlind ? <BlindEyeSvg /> : <EyeSvg />}</i>
     </label>
   );
 }

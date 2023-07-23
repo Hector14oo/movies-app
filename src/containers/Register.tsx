@@ -63,7 +63,7 @@ export function Register() {
           onClick={() => {}}
         />
         <span>
-          Already have account? <Link href={'/account/login'}>Login</Link>
+          Already have account? <Link href={'/login'}>Login</Link>
         </span>
       </form>
     </main>
