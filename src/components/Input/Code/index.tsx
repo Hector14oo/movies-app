@@ -1,23 +1,15 @@
-import { AtSvg } from 'assets/icons';
 import styles from '@styles/components/Inputs.module.css';
 
-export function Email({
-  placeholder,
-}: {
-  placeholder: 'Email' | 'Confirm Email' | 'Enter your Email';
-}) {
+export function Code({ placeholder }: { placeholder: 'Enter the Code' }) {
   return (
     <label
       htmlFor={placeholder}
       className={styles.FormInput}
     >
-      <i>
-        <AtSvg />
-      </i>
       <input
-        type='email'
+        type='number'
         id={placeholder}
-        name='email'
+        name='code'
         placeholder={placeholder}
         required
       />

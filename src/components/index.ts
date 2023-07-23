@@ -18,6 +18,7 @@ export { FloatingMenu } from './FloatingMenu';
 export { Header } from './Header';
 
 export {
+  Code as InputCode,
   Email as InputEmail,
   Password as InputPassword,
   Searcher as InputSearcher,
