@@ -25,6 +25,7 @@ export function Password({
       <input
         type={isBlind ? 'text' : 'password'}
         id={placeholder}
+        name='password'
         placeholder={placeholder}
         required
       />

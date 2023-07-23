@@ -1,3 +1,4 @@
+export { EmailSentFigure } from './EmailSentFigure';
 export { EmptyFigure } from './EmptyFigure';
 export { ErrorFigure } from './ErrorFigure';
 export { ForgotPasswordFigure } from './ForgotPasswordFigure';
