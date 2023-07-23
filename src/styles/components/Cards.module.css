@@ -1,8 +1,7 @@
 .Card {
   min-width: 150px;
-  min-height: 250px;
+  min-height: 300px;
   width: 100%;
-  height: 100%;
   padding: 20px;
 
   border-radius: var(--BR-3);
@@ -46,9 +45,10 @@
   display: grid;
   place-items: center;
   grid-template-rows: 1fr auto;
-
+  
   border-radius: var(--BR-3);
   box-shadow: var(--SHADOW);
+  cursor: pointer;
 }
 .TrailerCard h2 {
   width: 100%;
@@ -97,41 +97,61 @@
 }
 .TrailerModal section iframe {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .ArtistCard {
-  min-width: 100px;
-  min-height: 150px;
-  width: 100%;
-  height: 100%;
+  min-width: 150px;
+  min-height: 200px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-decoration: none;
 
-  background: var(--GRADIENT),
-    url('https://cloudfront-us-east-1.images.arcpublishing.com/copesa/ZPEQXUEQKFELNAMFUTACTVA6NY.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   border-radius: var(--BR-3);
   box-shadow: var(--SHADOW);
 }
-.ArtistCard main {
+.ArtistCard article {
   width: 100%;
   height: fit-content;
+  padding: 0;
 }
-.ArtistCard main h2 {
-  font-size: calc(var(--SMALLY) + 1px);
+.ArtistCard article h2 {
+  font-size: (--SMALLY);
   color: var(--C1);
   font-weight: 700;
 }
-.ArtistCard main p {
+.ArtistCard article p {
   color: var(--C1-70);
   font-size: var(--SMALLY);
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .Card footer h2 {
+    font-size: var(--MIDDLE);
+  }
+  .Card footer p {
+    font-size: var(--MIDDLELY);
+  }
+
+  .TrailerCard h2 {
+    font-size: var(--MIDDLE);
+  }
+
+  .ArtistCard {
+    min-width: 200px;
+    min-height: 300px;
+    border-radius: var(--BR-6);
+  }
+  .ArtistCard article h2 {
+    font-size: var(--MIDDLE);
+  }
+  .ArtistCard article p {
+    font-size: var(--MIDDLELY);
+  }
 }

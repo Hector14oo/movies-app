@@ -8,3 +8,9 @@
   border-radius: var(--BR-1);
   text-decoration: none;
 }
+
+@media (min-width: 768px) {
+  .Span {
+    font-size: var(--MIDDLELY);
+  }
+}

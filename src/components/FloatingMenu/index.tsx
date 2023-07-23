@@ -1,11 +1,10 @@
 'use client';
 
-import { useSessionContext } from '@context/SessionContext';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { useSession } from '@hooks/useSession';
 
-import { Logo, ButtonClose, ButtonNormal } from '@components';
+import { Logo, ButtonClose, ButtonNormal, ButtonLink } from '@components';
 import {
   HomeSvg,
   GlassSvg,
@@ -31,7 +30,7 @@ const PATHS = [
 ];
 
 export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
-  const { loged, setLoged } = useSessionContext();
+  const { user, logOut } = useSession();
   const pathName = usePathname();
 
   const handleLink = (route?: string) => {
@@ -76,39 +75,31 @@ export function FloatingMenu({ toggleMenu }: { toggleMenu: () => void }) {
       </main>
 
       <footer>
-        {loged ? (
+        {user ? (
           <>
             <article>
-              <figure>
-                <Image
-                  src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80'
-                  fill={true}
-                  alt='User Img'
-                />
-              </figure>
+              <figure
+                style={{
+                  background: `url(${user.profilePicture}) no-repeat center/cover`,
+                }}
+              />
               <main>
                 <section>
-                  <h2>Aiony Haust</h2>
-                  <p>Junior Frontend</p>
+                  <h2>{user.name}</h2>
+                  <p>{user.email}</p>
                 </section>
-                <Link
-                  onClick={() => handleLink()}
-                  href={'/account'}
-                >
-                  Go to profile
-                </Link>
               </main>
             </article>
-
             <ButtonNormal
               text='Log Out'
-              onClick={() => setLoged(false)}
+              onClick={logOut}
             />
           </>
         ) : (
-          <ButtonNormal
+          <ButtonLink
+            href={'/login'}
             text='Login'
-            onClick={() => setLoged(true)}
+            onClick={toggleMenu}
           />
         )}
       </footer>

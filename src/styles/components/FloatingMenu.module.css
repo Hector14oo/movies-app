@@ -1,5 +1,7 @@
 .FloatingMenu {
+  margin: 0 auto;
   width: 100%;
+  max-width: 768px;
   height: 100%;
   padding: 20px;
   display: grid;
@@ -8,8 +10,9 @@
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 2;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   background: rgba(57, 62, 70, 0.9);
   backdrop-filter: blur(4px);
@@ -20,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.FloatingMenu header button svg{
+.FloatingMenu header button svg {
   fill: var(--C1);
 }
 .FloatingMenu main h1 {
@@ -56,9 +59,8 @@
 }
 .FloatingMenu footer article {
   padding: 8px;
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: 84px 1fr;
+  margin: 40px 0;
+  display: flex;
   gap: 20px;
 
   border-radius: var(--BR-2);
@@ -82,14 +84,42 @@
   padding: 8px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
   color: var(--C1);
 }
-.FloatingMenu footer article main p,
-.FloatingMenu footer article main a {
-  font-size: calc((var(--SMALL) / 2) + 2px);
+.FloatingMenu footer article main h2 {
+  font-size: var(--SMALL);
 }
 .FloatingMenu footer article main p {
   color: var(--C1-70);
+  font-size: var(--SMALLY);
+}
+
+@media (min-width: 768px) {
+  .FloatingMenu main h1 {
+    font-size: var(--LARGE);
+  }
+  .FloatingMenu main ul li a span {
+    font-size: var(--MIDDLE);
+  }
+  .FloatingMenu main ul li a span svg {
+    width: 56px;
+    height: 56px;
+  }
+  .FloatingMenu main ul li a svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .FloatingMenu footer article figure {
+    width: 144px;
+    height: 144px;
+  }
+  .FloatingMenu footer article main h2 {
+    font-size: var(--LARGE);
+  }
+  .FloatingMenu footer article main p {
+    font-size: var(--LARGELY);
+  }
 }

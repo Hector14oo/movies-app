@@ -8,6 +8,7 @@ import {
   ButtonFavorite,
   FloatingMenu,
 } from '@components';
+
 import styles from '@styles/components/Header.module.css';
 
 const routes: Record<string, string> = {
@@ -16,15 +17,13 @@ const routes: Record<string, string> = {
   '/trending': 'Trending',
   '/favorites': 'Favorites',
   '/profile': 'Profile',
-  '/account': 'Account',
 };
 
 const excludeRoutes: string[] = [
-  '/account',
-  '/account/login',
-  '/account/register',
-  '/account/forgot-password',
-  '/account/setting-password',
+  '/login',
+  '/register',
+  '/forgot-password',
+  '/setting-password',
 ];
 
 export function Header() {
@@ -38,31 +37,32 @@ export function Header() {
   const className = path === '/' ? styles['Hidden'] : '';
 
   return (
-    <header className={`${styles.Header} ${className}`}>
-      <nav
-        style={
-          excludeRoutes.includes(path) || path.includes('/movie-details/')
-            ? { backgroundColor: 'transparent' }
-            : {}
-        }
-      >
-        <ButtonBack />
+    <>
+      {path !== '/choose-username' && (
+        <header
+          className={`${styles.Header} ${className}`}
+          style={(excludeRoutes.includes(path) || path.includes('/movie-details/')) ? { backgroundColor: 'transparent' } : {}}
+        >
+          <nav>
+            <ButtonBack />
 
-        {!excludeRoutes.includes(path) && (
-          <>
-            <span>{title}</span>
-            {path.includes('/movie-details/') ? (
-              <ButtonFavorite
-                isFav={favorite}
-                toggleFav={() => setFavorite(!favorite)}
-              />
-            ) : (
-              <ButtonMenu onClick={toggleMenu} />
+            {!excludeRoutes.includes(path) && (
+              <>
+                <span>{title}</span>
+                {path.includes('/movie-details/') ? (
+                  <ButtonFavorite
+                    isFav={favorite}
+                    toggleFav={() => setFavorite(!favorite)}
+                  />
+                ) : (
+                  <ButtonMenu onClick={toggleMenu} />
+                )}
+              </>
             )}
-          </>
-        )}
-      </nav>
-      {isOpen && <FloatingMenu toggleMenu={toggleMenu} />}
-    </header>
+          </nav>
+          {isOpen && <FloatingMenu toggleMenu={toggleMenu} />}
+        </header>
+      )}
+    </>
   );
 }
