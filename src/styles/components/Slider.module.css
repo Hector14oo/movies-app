@@ -1,5 +1,5 @@
 .Buttons {
-  width: 100%;
+  width: calc(100% - 40px);
   height: fit-content;
   margin: auto 0;
   display: flex;
@@ -36,10 +36,11 @@
   transform: translateX(-20%);
 }
 .Slider {
+  width: fit-content;
   height: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(20, calc(100vw - 40px));
+  justify-items: center;
   gap: 20px;
   transform: translateX(calc(-100vw + 20px));
 }
@@ -70,4 +71,17 @@
 .Slider .onView footer p {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .Buttons {
+    padding: 0 26px;
+  }
+  .Slider {
+    grid-template-columns: repeat(20, calc(768px - 40px));
+    transform: translateX(calc(-768px + 20px));
+  }
+  .Slider a {
+    width: calc(691.2px  - 40px);
+  }
 }
