@@ -39,7 +39,7 @@ export function Register() {
           onClick={handleClick}
         />
         <span>
-          Already have account? <Link href={'/account/login'}>Login</Link>
+          Already have account? <Link href={'/login'}>Login</Link>
         </span>
       </form>
     </main>

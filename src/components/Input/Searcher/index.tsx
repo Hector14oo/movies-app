@@ -25,6 +25,7 @@ export function Searcher({ onChange, value, reset }: SearcherType) {
         placeholder='Movie Name'
         onChange={onChange}
         value={value}
+        autoComplete='off'
       />
 
       <button

@@ -1,13 +1,14 @@
+import { PosterSection, TrailerSection } from '@components/Home';
 import { useTrending } from '@hooks/useTrending';
 import { useTrailers } from '@hooks/useTrailers';
-import { CardPoster, CardTrailer } from '@components';
-import { ErrorFigure } from 'assets/figures';
 
+import { ErrorFigure } from 'assets/figures';
 import styles from '@styles/containers/Home.module.css';
 
 export async function Home() {
   const trending = await useTrending();
   const trailers = await useTrailers();
+
   return (
     <>
       {trending.error || trailers.error ? (
@@ -25,34 +26,9 @@ export async function Home() {
       ) : (
         <main className={styles.Main}>
           <h1>Trending Movies Of The Week</h1>
-          <section>
-            {trending.result
-              ?.splice(0, 2)
-              .map(({ id, title, date, votes, poster }) => (
-                <CardPoster
-                  key={id}
-                  id={id}
-                  title={title}
-                  date={date}
-                  votes={votes}
-                  poster={poster}
-                />
-              ))}
-          </section>
+          <PosterSection array={trending.result?.slice(0, 3)} />
           <h2>Lastest Trailers</h2>
-          <section>
-            {trailers.result
-              ?.splice(0, 2)
-              .map(({ id, videoKey, backdrop, title }) => (
-                <CardTrailer
-                  key={id.toString()}
-                  id={id}
-                  videoKey={videoKey}
-                  title={title}
-                  backdrop={backdrop}
-                />
-              ))}
-          </section>
+          <TrailerSection array={trailers.result?.slice(0, 3)} />
         </main>
       )}
     </>
