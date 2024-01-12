@@ -22,3 +22,5 @@ export async function Trending() {
     </main>
   );
 }
+
+export const revalidate = 604800;

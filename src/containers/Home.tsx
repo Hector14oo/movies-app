@@ -34,3 +34,5 @@ export async function Home() {
     </>
   );
 }
+
+export const revalidate = 604800;
