@@ -2,20 +2,19 @@ export const OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization:
-      'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MTFjMzk1M2I3NmNhMDY4MGI0NDc1ZmFlMDRkYjlkMyIsInN1YiI6IjY1MWQ5ZDIxZWE4NGM3MDEyZDY5N2FiYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7La3kjtqN9B2qOqWYCjI3beUC8OIFyIb6qUe5P7JpNk',
   },
 };
 
-export const SEARCH_ENDPOINT = (value: string) => `https://api.themoviedb.org/3/search/movie?query=${value}&page=1`;
+const AUTH = `api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
 
-export const TRENDING_ENDPOINT = 'https://api.themoviedb.org/3/trending/movie/week';
+export const SEARCH_ENDPOINT = (value: string) => `https://api.themoviedb.org/3/search/movie?api_key=711c3953b76ca0680b4475fae04db9d3&query=${value}&page=1`;
 
-export const UP_COMING_ENDPOINT = 'https://api.themoviedb.org/3/movie/upcoming';
+export const TRENDING_ENDPOINT = `https://api.themoviedb.org/3/trending/movie/week?${AUTH}`;
 
-export const VIDEOS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/videos`;
+export const UP_COMING_ENDPOINT = `https://api.themoviedb.org/3/movie/upcoming?${AUTH}`;
 
-export const MOVIE_DETAILS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}`;
+export const VIDEOS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/videos?${AUTH}`;
 
-export const MOVIE_CREDITS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/credits`;
+export const MOVIE_DETAILS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}?${AUTH}`;
 
+export const MOVIE_CREDITS_ENDPOINT = (id: number) => `https://api.themoviedb.org/3/movie/${id}/credits?${AUTH}`;
